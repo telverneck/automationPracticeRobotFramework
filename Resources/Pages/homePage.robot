@@ -24,3 +24,9 @@ Then I must see the results
 Then I must see the message "${message}"
     Title Should Be                     Search - My Store 
     Element Should Contain              ${alertMessage}     ${message}
+
+No result Search
+    [Arguments]     ${text}     ${message}
+    Given that I want to search for "${text}"
+    When I search for this
+    Then I must see the message "${message}" 

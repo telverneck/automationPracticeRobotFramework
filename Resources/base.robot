@@ -1,8 +1,8 @@
 ***Settings
 Library                 SeleniumLibrary
 
-Resource                hooks.robot
-Resource                Pages/homePage.robot
+Resource                Hooks.robot
+Resource                Pages/HomePage.robot
 
 ***Variables
 ${BASE_URL}             http://automationpractice.com/index.php
