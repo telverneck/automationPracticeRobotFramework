@@ -1,112 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0 (Python 3.9.1 on win32)" generated="20210408 01:46:54.743" rpa="false" schemaversion="2">
+<robot generator="Robot 4.0 (Python 3.9.1 on win32)" generated="20210408 23:22:34.906" rpa="false" schemaversion="2">
 <suite id="s1" name="Tests" source="C:\RobotFramework\projectRobotWeb\Tests">
 <suite id="s1-s1" name="Home" source="C:\RobotFramework\projectRobotWeb\Tests\Home">
 <suite id="s1-s1-s1" name="HomeTest" source="C:\RobotFramework\projectRobotWeb\Tests\Home\HomeTest.robot">
-<test id="s1-s1-s1-t1" name="Scenario1: Search valid content">
+<test id="s1-s1-s1-t1" name="Scenario2: No results search">
 <kw name="Start Session" library="hooks" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${BASE_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210408 01:46:54.927" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
-<status status="PASS" starttime="20210408 01:46:54.927" endtime="20210408 01:47:07.424"/>
+<msg timestamp="20210408 23:22:35.159" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20210408 23:22:35.159" endtime="20210408 23:22:50.114"/>
 </kw>
 <kw name="Set Window Size" library="SeleniumLibrary">
 <arg>${WIDTH}</arg>
 <arg>${HEIGHT}</arg>
 <doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" starttime="20210408 01:47:07.425" endtime="20210408 01:47:07.541"/>
+<status status="PASS" starttime="20210408 23:22:50.114" endtime="20210408 23:22:50.230"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>${TIMEOUT}</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20210408 01:47:07.542" endtime="20210408 01:47:07.543"/>
+<status status="PASS" starttime="20210408 23:22:50.230" endtime="20210408 23:22:50.231"/>
 </kw>
 <kw name="Set Selenium Timeout" library="SeleniumLibrary">
 <arg>${TIMEOUT}</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20210408 01:47:07.543" endtime="20210408 01:47:07.544"/>
+<status status="PASS" starttime="20210408 23:22:50.231" endtime="20210408 23:22:50.232"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>My Store</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210408 01:47:07.547" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20210408 01:47:07.544" endtime="20210408 01:47:07.547"/>
+<msg timestamp="20210408 23:22:50.236" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20210408 23:22:50.232" endtime="20210408 23:22:50.236"/>
 </kw>
-<status status="PASS" starttime="20210408 01:46:54.927" endtime="20210408 01:47:07.547"/>
+<status status="PASS" starttime="20210408 23:22:35.158" endtime="20210408 23:22:50.237"/>
 </kw>
-<kw name="Given that I want to search for &quot;Item 1&quot;" sourcename="Given that I want to search for &quot;${item}&quot;">
+<kw name="Given that I want to search for &quot;No results&quot;" library="homePage" sourcename="Given that I want to search for &quot;${item}&quot;">
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${item}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20210408 01:47:07.548" level="INFO">${item} = Item 1</msg>
-<status status="PASS" starttime="20210408 01:47:07.548" endtime="20210408 01:47:07.548"/>
+<msg timestamp="20210408 23:22:50.238" level="INFO">${item} = No results</msg>
+<status status="PASS" starttime="20210408 23:22:50.237" endtime="20210408 23:22:50.238"/>
 </kw>
-<status status="PASS" starttime="20210408 01:47:07.548" endtime="20210408 01:47:07.548"/>
+<status status="PASS" starttime="20210408 23:22:50.237" endtime="20210408 23:22:50.238"/>
 </kw>
-<kw name="When I search for this">
+<kw name="When I search for this" library="homePage">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${searchText}</arg>
 <arg>${item}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210408 01:47:07.549" level="INFO">Typing text 'Item 1' into text field 'id:search_query_top'.</msg>
-<status status="PASS" starttime="20210408 01:47:07.549" endtime="20210408 01:47:07.626"/>
+<msg timestamp="20210408 23:22:50.239" level="INFO">Typing text 'No results' into text field 'id:search_query_top'.</msg>
+<status status="PASS" starttime="20210408 23:22:50.238" endtime="20210408 23:22:50.316"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${searchButton}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210408 01:47:07.627" level="INFO">Clicking button 'name:submit_search'.</msg>
-<status status="PASS" starttime="20210408 01:47:07.626" endtime="20210408 01:47:10.321"/>
+<msg timestamp="20210408 23:22:50.317" level="INFO">Clicking button 'name:submit_search'.</msg>
+<status status="PASS" starttime="20210408 23:22:50.316" endtime="20210408 23:22:50.372"/>
 </kw>
-<status status="PASS" starttime="20210408 01:47:07.549" endtime="20210408 01:47:10.321"/>
+<status status="PASS" starttime="20210408 23:22:50.238" endtime="20210408 23:22:50.372"/>
 </kw>
-<kw name="Then I must see the results">
+<kw name="Then I must see the message &quot;No results were found for your search &quot;No results&quot;&quot;" library="homePage" sourcename="Then I must see the message &quot;${message}&quot;">
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>Search - My Store</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210408 01:47:10.326" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" starttime="20210408 01:47:10.322" endtime="20210408 01:47:10.326"/>
+<msg timestamp="20210408 23:22:51.940" level="INFO">Page title is 'Search - My Store'.</msg>
+<status status="PASS" starttime="20210408 23:22:50.373" endtime="20210408 23:22:51.940"/>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${searchResults}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210408 01:47:10.327" endtime="20210408 01:47:10.346"/>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${alertMessage}</arg>
+<arg>${message}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20210408 23:22:51.958" level="INFO">Element 'css:.alert-warning' contains text 'No results were found for your search "No results"'.</msg>
+<status status="PASS" starttime="20210408 23:22:51.940" endtime="20210408 23:22:51.958"/>
 </kw>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${searchResults}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20210408 01:47:10.362" level="INFO">Element 'css:.product-listing' is displayed.</msg>
-<status status="PASS" starttime="20210408 01:47:10.346" endtime="20210408 01:47:10.362"/>
-</kw>
-<status status="PASS" starttime="20210408 01:47:10.321" endtime="20210408 01:47:10.362"/>
+<status status="PASS" starttime="20210408 23:22:50.372" endtime="20210408 23:22:51.958"/>
 </kw>
 <kw name="Finish Session" library="hooks" type="TEARDOWN">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210408 01:47:10.660" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210408 01:47:10.363" endtime="20210408 01:47:10.660"/>
+<msg timestamp="20210408 23:22:52.247" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210408 23:22:51.959" endtime="20210408 23:22:52.247"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210408 01:47:10.660" endtime="20210408 01:47:12.786"/>
+<status status="PASS" starttime="20210408 23:22:52.247" endtime="20210408 23:22:54.407"/>
 </kw>
-<status status="PASS" starttime="20210408 01:47:10.362" endtime="20210408 01:47:12.786"/>
+<status status="PASS" starttime="20210408 23:22:51.959" endtime="20210408 23:22:54.407"/>
 </kw>
-<status status="PASS" starttime="20210408 01:46:54.926" endtime="20210408 01:47:12.786"/>
+<tag>results</tag>
+<status status="PASS" starttime="20210408 23:22:35.158" endtime="20210408 23:22:54.408"/>
 </test>
 <doc>Test Home Screen</doc>
-<status status="PASS" starttime="20210408 01:46:54.766" endtime="20210408 01:47:12.788"/>
+<status status="PASS" starttime="20210408 23:22:34.932" endtime="20210408 23:22:54.409"/>
 </suite>
-<status status="PASS" starttime="20210408 01:46:54.764" endtime="20210408 01:47:12.789"/>
+<status status="PASS" starttime="20210408 23:22:34.930" endtime="20210408 23:22:54.411"/>
 </suite>
-<status status="PASS" starttime="20210408 01:46:54.744" endtime="20210408 01:47:12.791"/>
+<status status="PASS" starttime="20210408 23:22:34.908" endtime="20210408 23:22:54.413"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">results</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>

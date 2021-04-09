@@ -2,6 +2,7 @@
 Library                 SeleniumLibrary
 
 Resource                hooks.robot
+Resource                Pages/homePage.robot
 
 ***Variables
 ${BASE_URL}             http://automationpractice.com/index.php
