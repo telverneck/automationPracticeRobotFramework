@@ -31,7 +31,6 @@ full test cycle:
 robot -d ./logs tests
 ```
 
-
 Smoke test: 
 ```shell
 robot -d ./logs -i smoke tests
