@@ -2,6 +2,7 @@
 Library                 SeleniumLibrary
 
 Resource                Hooks.robot
+Resource                Pages/SearchPage.robot
 Resource                Pages/HomePage.robot
 
 ***Variables
