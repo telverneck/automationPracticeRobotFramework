@@ -7,7 +7,7 @@
 ## Installation:
 - Requires Robot
 - Python 2.7 or above
-- after downloading the project, please install python and use this pip commands: 
+- after downloading the project, please install python and use these pip commands: 
 
 ```shell
 pip install robotframework
@@ -53,11 +53,11 @@ Open Browser        about:blank   Chrome         executable_path=C:/path/to/chro
 
 ## How to run Tests in a different browser:
 
-This framework is setup to run in Chrome, but you can change add -v n the command line: 
+This framework is setup to run in Chrome, but you can change by adding "-v" in the command line: 
 
 E.g.:
 ```shell
 robot -v BROWSER:firefox -d ./logs -i smoke tests
 ```
 
-Note: BROWSER is a variable set in the base page. Alays match your browser variable description
+Note: BROWSER is a variable set in "Resources\Base.robot" . Always match your browser variable description
