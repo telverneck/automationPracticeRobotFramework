@@ -50,3 +50,14 @@ pabot --processes 2 --outputdir Results\ Tests\*.robot
 
 Note: add this parameters to ignore errors in the base page:
 Open Browser        about:blank   Chrome         executable_path=C:/path/to/chromedrive     options=add_argument("--ignore-certificate-errors")
+
+## How to run Tests in a different browser:
+
+This framework is setup to run in Chrome, but you can change add -v n the command line: 
+
+E.g.:
+```shell
+robot -v BROWSER:firefox -d ./logs -i smoke tests
+```
+
+Note: BROWSER is a variable set in the base page. Alays match your browser variable description

@@ -1,5 +1,5 @@
 ***Settings***
-Documentation           Check Search functionality 
+Documentation           Home screen functionalities - Banners, Best offers, Navigation and Product sessions
 
 Resource                ../../Resources/Base.robot
 
@@ -16,8 +16,7 @@ Scenario2: Navigation Bar - Go to Contact us
     [Template]  home navigation bar
     Contact us      CONTACT US
 
-Scenario3: Navigation Bar - Go to Sign in
-     
+Scenario3: Navigation Bar - Go to Sign in     
     [Template]  home navigation bar
     Sign in     AUTHENTICATION
 
@@ -28,12 +27,36 @@ Scenario5: Check Best offers - Popular tab
     When I go to "Popular" tab
     Then I see the product list
 
-Scenario5: Check Best offers - Best Sellers tab
+Scenario6: Check Best offers - Best Sellers tab
     When I go to "Best Sellers" tab
     Then I see the product list
 
-Scenario5: See home slider and offers
-    [Tags]  doing
+Scenario7: See home slider and offers
     Then I see the Home slider    
     And banner offers
     And I can navigate throught home slider images
+
+Scenario8: Product Menu - navigation Women 
+    [Tags]      doing  
+    [Template]      Product Menu Navigation
+    Women   T-shirts 
+
+Scenario9: Product Menu - navigation Women
+    [Tags]      doing  
+    [Template]      Product Menu Navigation
+    Women   Blouses 
+
+Scenario10: Product Menu - navigation Women
+    [Tags]      doing  
+    [Template]      Product Menu Navigation
+    Women   Casual Dresses
+
+Scenario11: Product Menu - navigation Women
+    [Tags]      doing  
+    [Template]      Product Menu Navigation
+    Women   Evening Dresses
+
+Scenario12: Product Menu - navigation Women
+    [Tags]      doing  
+    [Template]      Product Menu Navigation
+    Women   Summer Dresses

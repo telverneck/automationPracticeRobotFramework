@@ -17,9 +17,6 @@ ${homeSliderPrevButton}             css:.bx-prev
 
 
 
-
-
-
 ***Keywords***
 Then I must see the navigation bar with options "${optionText1}" and "${optionText2}"
     Element Should Be Visible       ${navigationBar}
@@ -61,3 +58,19 @@ And banner offers
 And I can navigate throught home slider images
     Click Element       ${homeSliderNextButton}
     Click Element       ${homeSliderPrevButton}
+
+# Products menu
+When I navigate in the product menu "${category}"
+    Mouse Over          xpath://ul[contains(@class,'menu-content')]//a[contains(text(), '${category}')]
+
+and I submit an option "${item}"
+    Wait Until Element Is Visible   xpath://ul[contains(@class,'menu-content')]//ul//a[contains(@title, '${item}')]
+    Wait Until Element Is Enabled   xpath://ul[contains(@class,'menu-content')]//ul//a[contains(@title, '${item}')]
+    Click Element                   xpath://ul[contains(@class,'menu-content')]//ul//a[contains(@title, '${item}')]
+    Set Test Variable       ${item}
+
+Product Menu Navigation
+    [Arguments]     ${category}     ${subItem}
+    When I navigate in the product menu "${category}"
+    and I submit an option "${subItem}"
+    Then I must see the results 

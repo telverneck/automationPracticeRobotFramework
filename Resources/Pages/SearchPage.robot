@@ -16,7 +16,7 @@ When I search for this
     Click Button        ${searchButton}
 
 Then I must see the results 
-    Title Should Be                     Search - My Store 
+    # Title Should Be                     Search - My Store 
     Wait Until Element Is Visible       ${searchResults} 
     Element Should Be Visible           ${resultList} 
     Element Should Be Visible           xpath://span[contains(text(),"${item}")]
