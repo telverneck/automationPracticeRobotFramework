@@ -1,32 +1,27 @@
 ***Variables***
-${searchText}               id:search_query_top 
-${searchButton}             name:submit_search 
-${searchResults}            css:.product-listing
-${resultList}               css:.product_list.grid.row 
-${alertMessage}             css:.alert-warning
+${searchText}               id:search_query_top  
+${signInNavOption}          css:nav div.header_user_info
+${contactUsNavOption}       css:nav div#contact-link 
+${phoneNavOption}           css:nav span.shop-phone 
+${navigationBar}            css:#header .nav  
+${pageHeader}               xpath://h1[contains(@class,"page-heading")]       
+
+
 
 
 
 ***Keywords***
-Given that I want to search for "${item}"
-    Set Test Variable   ${item}
+Then I must see the navigation bar with options "${optionText1}", "${optionText2}"
+    Element Should Be Visible       ${navigationBar}
+    Element Should Be Visible       ${phoneNavOption}
+    Element Text Should Be          ${contactUsNavOption}       ${optionText1}
+    Element Text Should Be          ${signInNavOption}          ${optionText2}
 
-When I search for this
-    Input Text          ${searchText}   ${item}
-    Click Button        ${searchButton}
+When I access the navigation bar link "${linkText}"
+    Wait Until Element Is Visible   xpath://nav//*[contains(text(), "${linkText}")]
+    Click Element                   xpath://nav//*[contains(text(), "${linkText}")] 
 
-Then I must see the results 
-    Title Should Be                     Search - My Store 
-    Wait Until Element Is Visible       ${searchResults} 
-    Element Should Be Visible           ${resultList} 
-    Element Should Be Visible           xpath://span[contains(text(),"${item}")]
+Then I must see the page with the header "${text}"
+    Element Should Contain          ${pageHeader}      ${text}
 
-Then I must see the message "${message}"
-    Title Should Be                     Search - My Store 
-    Element Should Contain              ${alertMessage}     ${message}
-
-No result Search
-    [Arguments]     ${text}     ${message}
-    Given that I want to search for "${text}"
-    When I search for this
-    Then I must see the message "${message}" 
+        

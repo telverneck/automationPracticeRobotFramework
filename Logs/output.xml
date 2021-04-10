@@ -1,520 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0 (Python 3.9.1 on win32)" generated="20210409 00:00:55.451" rpa="false" schemaversion="2">
-<suite id="s1" name="Tests" source="C:\RobotFramework\projectRobotWeb\Tests">
-<suite id="s1-s1" name="Home" source="C:\RobotFramework\projectRobotWeb\Tests\Home">
-<suite id="s1-s1-s1" name="homeTest" source="C:\RobotFramework\projectRobotWeb\Tests\Home\homeTest.robot">
+<robot generator="Robot 4.0 (Python 3.9.1 on win32)" generated="20210409 20:58:37.292" rpa="false" schemaversion="2">
+<suite id="s1" name="homeTest" source="C:\RobotFramework\projectRobotWeb\Tests\Home\homeTest.robot">
 <kw name="Start Session" library="Hooks" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${BASE_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210409 00:00:55.628" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
-<status status="PASS" starttime="20210409 00:00:55.628" endtime="20210409 00:01:35.360"/>
+<msg timestamp="20210409 20:58:37.495" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20210409 20:58:37.495" endtime="20210409 20:58:53.908"/>
 </kw>
 <kw name="Set Window Size" library="SeleniumLibrary">
 <arg>${WIDTH}</arg>
 <arg>${HEIGHT}</arg>
 <doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" starttime="20210409 00:01:35.360" endtime="20210409 00:01:35.474"/>
+<status status="PASS" starttime="20210409 20:58:53.909" endtime="20210409 20:58:54.023"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>${TIMEOUT}</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20210409 00:01:35.474" endtime="20210409 00:01:35.475"/>
+<status status="PASS" starttime="20210409 20:58:54.023" endtime="20210409 20:58:54.024"/>
 </kw>
 <kw name="Set Selenium Timeout" library="SeleniumLibrary">
 <arg>${TIMEOUT}</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20210409 00:01:35.475" endtime="20210409 00:01:35.476"/>
+<status status="PASS" starttime="20210409 20:58:54.024" endtime="20210409 20:58:54.025"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>My Store</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210409 00:01:35.480" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20210409 00:01:35.476" endtime="20210409 00:01:35.480"/>
+<msg timestamp="20210409 20:58:54.028" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20210409 20:58:54.025" endtime="20210409 20:58:54.028"/>
 </kw>
-<status status="PASS" starttime="20210409 00:00:55.627" endtime="20210409 00:01:35.480"/>
+<status status="PASS" starttime="20210409 20:58:37.494" endtime="20210409 20:58:54.029"/>
 </kw>
-<test id="s1-s1-s1-t1" name="Scenario2: No results search">
-<kw name="No result Search" library="HomePage">
-<arg>No results</arg>
-<arg>No results were found for your search "No results"</arg>
-<kw name="Given that I want to search for &quot;${text}&quot;" library="HomePage" sourcename="Given that I want to search for &quot;${item}&quot;">
-<kw name="Set Test Variable" library="BuiltIn">
-<arg>${item}</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20210409 00:01:35.482" level="INFO">${item} = No results</msg>
-<status status="PASS" starttime="20210409 00:01:35.481" endtime="20210409 00:01:35.482"/>
+<test id="s1-t1" name="Scenario2: Go to Contact us">
+<kw name="When I access the navigation bar link &quot;Contact us&quot;" library="HomePage" sourcename="When I access the navigation bar link &quot;${linkText}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210409 20:58:54.030" endtime="20210409 20:58:54.050"/>
 </kw>
-<status status="PASS" starttime="20210409 00:01:35.481" endtime="20210409 00:01:35.482"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 20:58:54.051" level="INFO">Clicking element 'xpath://nav//*[contains(text(), "Contact us")]'.</msg>
+<status status="PASS" starttime="20210409 20:58:54.050" endtime="20210409 20:58:58.290"/>
 </kw>
-<kw name="When I search for this" library="HomePage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${searchText}</arg>
-<arg>${item}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210409 00:01:35.483" level="INFO">Typing text 'No results' into text field 'id:search_query_top'.</msg>
-<status status="PASS" starttime="20210409 00:01:35.482" endtime="20210409 00:01:35.560"/>
+<status status="PASS" starttime="20210409 20:58:54.029" endtime="20210409 20:58:58.290"/>
 </kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${searchButton}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210409 00:01:35.560" level="INFO">Clicking button 'name:submit_search'.</msg>
-<status status="PASS" starttime="20210409 00:01:35.560" endtime="20210409 00:01:35.616"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:35.482" endtime="20210409 00:01:35.616"/>
-</kw>
-<kw name="Then I must see the message &quot;${message}&quot;" library="HomePage" sourcename="Then I must see the message &quot;${message}&quot;">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Search - My Store</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210409 00:01:37.303" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" starttime="20210409 00:01:35.617" endtime="20210409 00:01:37.303"/>
-</kw>
+<kw name="Then I must see the page with the header &quot;CONTACT US&quot;" library="HomePage" sourcename="Then I must see the page with the header &quot;${text}&quot;">
 <kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${alertMessage}</arg>
-<arg>${message}</arg>
+<arg>xpath://h1[contains(@class,"page-heading")]</arg>
+<arg>${text}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210409 00:01:37.321" level="INFO">Element 'css:.alert-warning' contains text 'No results were found for your search "No results"'.</msg>
-<status status="PASS" starttime="20210409 00:01:37.303" endtime="20210409 00:01:37.321"/>
+<msg timestamp="20210409 20:58:58.310" level="INFO">Element 'xpath://h1[contains(@class,"page-heading")]' contains text 'CONTACT US'.</msg>
+<status status="PASS" starttime="20210409 20:58:58.291" endtime="20210409 20:58:58.310"/>
 </kw>
-<status status="PASS" starttime="20210409 00:01:35.616" endtime="20210409 00:01:37.321"/>
+<status status="PASS" starttime="20210409 20:58:58.291" endtime="20210409 20:58:58.310"/>
 </kw>
-<status status="PASS" starttime="20210409 00:01:35.481" endtime="20210409 00:01:37.321"/>
-</kw>
-<tag>results</tag>
-<status status="PASS" starttime="20210409 00:01:35.480" endtime="20210409 00:01:37.322"/>
+<tag>doing</tag>
+<status status="PASS" starttime="20210409 20:58:54.029" endtime="20210409 20:58:58.311"/>
 </test>
-<test id="s1-s1-s1-t2" name="Scenario2: No results search - special characters">
-<kw name="No result Search" library="HomePage">
-<arg>--------</arg>
-<arg>No results were found for your search "--------"</arg>
-<kw name="Given that I want to search for &quot;${text}&quot;" library="HomePage" sourcename="Given that I want to search for &quot;${item}&quot;">
-<kw name="Set Test Variable" library="BuiltIn">
-<arg>${item}</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20210409 00:01:37.325" level="INFO">${item} = --------</msg>
-<status status="PASS" starttime="20210409 00:01:37.325" endtime="20210409 00:01:37.325"/>
+<test id="s1-t2" name="Scenario3: Go to Sign in">
+<kw name="When I access the navigation bar link &quot;Sign in&quot;" library="HomePage" sourcename="When I access the navigation bar link &quot;${linkText}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210409 20:58:58.313" endtime="20210409 20:58:58.332"/>
 </kw>
-<status status="PASS" starttime="20210409 00:01:37.324" endtime="20210409 00:01:37.325"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 20:58:58.332" level="INFO">Clicking element 'xpath://nav//*[contains(text(), "Sign in")]'.</msg>
+<status status="PASS" starttime="20210409 20:58:58.332" endtime="20210409 20:59:01.258"/>
 </kw>
-<kw name="When I search for this" library="HomePage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${searchText}</arg>
-<arg>${item}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210409 00:01:37.326" level="INFO">Typing text '--------' into text field 'id:search_query_top'.</msg>
-<status status="PASS" starttime="20210409 00:01:37.326" endtime="20210409 00:01:37.396"/>
+<status status="PASS" starttime="20210409 20:58:58.313" endtime="20210409 20:59:01.258"/>
 </kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${searchButton}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210409 00:01:37.397" level="INFO">Clicking button 'name:submit_search'.</msg>
-<status status="PASS" starttime="20210409 00:01:37.396" endtime="20210409 00:01:39.745"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:37.325" endtime="20210409 00:01:39.745"/>
-</kw>
-<kw name="Then I must see the message &quot;${message}&quot;" library="HomePage" sourcename="Then I must see the message &quot;${message}&quot;">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Search - My Store</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210409 00:01:39.751" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" starttime="20210409 00:01:39.746" endtime="20210409 00:01:39.751"/>
-</kw>
+<kw name="Then I must see the page with the header &quot;AUTHENTICATION&quot;" library="HomePage" sourcename="Then I must see the page with the header &quot;${text}&quot;">
 <kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${alertMessage}</arg>
-<arg>${message}</arg>
+<arg>xpath://h1[contains(@class,"page-heading")]</arg>
+<arg>${text}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210409 00:01:39.774" level="INFO">Element 'css:.alert-warning' contains text 'No results were found for your search "--------"'.</msg>
-<status status="PASS" starttime="20210409 00:01:39.751" endtime="20210409 00:01:39.774"/>
+<msg timestamp="20210409 20:59:01.278" level="INFO">Element 'xpath://h1[contains(@class,"page-heading")]' contains text 'AUTHENTICATION'.</msg>
+<status status="PASS" starttime="20210409 20:59:01.259" endtime="20210409 20:59:01.278"/>
 </kw>
-<status status="PASS" starttime="20210409 00:01:39.745" endtime="20210409 00:01:39.774"/>
+<status status="PASS" starttime="20210409 20:59:01.259" endtime="20210409 20:59:01.278"/>
 </kw>
-<status status="PASS" starttime="20210409 00:01:37.324" endtime="20210409 00:01:39.775"/>
-</kw>
-<tag>results</tag>
-<status status="PASS" starttime="20210409 00:01:37.323" endtime="20210409 00:01:39.775"/>
-</test>
-<test id="s1-s1-s1-t3" name="Scenario3: No results search - numbers">
-<kw name="No result Search" library="HomePage">
-<arg>123456789</arg>
-<arg>No results were found for your search "123456789"</arg>
-<kw name="Given that I want to search for &quot;${text}&quot;" library="HomePage" sourcename="Given that I want to search for &quot;${item}&quot;">
-<kw name="Set Test Variable" library="BuiltIn">
-<arg>${item}</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20210409 00:01:39.778" level="INFO">${item} = 123456789</msg>
-<status status="PASS" starttime="20210409 00:01:39.778" endtime="20210409 00:01:39.778"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:39.778" endtime="20210409 00:01:39.778"/>
-</kw>
-<kw name="When I search for this" library="HomePage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${searchText}</arg>
-<arg>${item}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210409 00:01:39.779" level="INFO">Typing text '123456789' into text field 'id:search_query_top'.</msg>
-<status status="PASS" starttime="20210409 00:01:39.779" endtime="20210409 00:01:39.849"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${searchButton}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210409 00:01:39.850" level="INFO">Clicking button 'name:submit_search'.</msg>
-<status status="PASS" starttime="20210409 00:01:39.849" endtime="20210409 00:01:43.250"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:39.778" endtime="20210409 00:01:43.250"/>
-</kw>
-<kw name="Then I must see the message &quot;${message}&quot;" library="HomePage" sourcename="Then I must see the message &quot;${message}&quot;">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Search - My Store</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210409 00:01:43.264" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" starttime="20210409 00:01:43.251" endtime="20210409 00:01:43.264"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${alertMessage}</arg>
-<arg>${message}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210409 00:01:43.278" level="INFO">Element 'css:.alert-warning' contains text 'No results were found for your search "123456789"'.</msg>
-<status status="PASS" starttime="20210409 00:01:43.264" endtime="20210409 00:01:43.279"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:43.250" endtime="20210409 00:01:43.279"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:39.777" endtime="20210409 00:01:43.279"/>
-</kw>
-<tag>results</tag>
-<status status="PASS" starttime="20210409 00:01:39.777" endtime="20210409 00:01:43.279"/>
-</test>
-<test id="s1-s1-s1-t4" name="Scenario4: No results search - underline">
-<kw name="No result Search" library="HomePage">
-<arg>"_____"</arg>
-<arg>No results were found for your search ""_____""</arg>
-<kw name="Given that I want to search for &quot;${text}&quot;" library="HomePage" sourcename="Given that I want to search for &quot;${item}&quot;">
-<kw name="Set Test Variable" library="BuiltIn">
-<arg>${item}</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20210409 00:01:43.282" level="INFO">${item} = "_____"</msg>
-<status status="PASS" starttime="20210409 00:01:43.282" endtime="20210409 00:01:43.282"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:43.281" endtime="20210409 00:01:43.282"/>
-</kw>
-<kw name="When I search for this" library="HomePage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${searchText}</arg>
-<arg>${item}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210409 00:01:43.283" level="INFO">Typing text '"_____"' into text field 'id:search_query_top'.</msg>
-<status status="PASS" starttime="20210409 00:01:43.283" endtime="20210409 00:01:43.354"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${searchButton}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210409 00:01:43.354" level="INFO">Clicking button 'name:submit_search'.</msg>
-<status status="PASS" starttime="20210409 00:01:43.354" endtime="20210409 00:01:47.970"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:43.282" endtime="20210409 00:01:47.971"/>
-</kw>
-<kw name="Then I must see the message &quot;${message}&quot;" library="HomePage" sourcename="Then I must see the message &quot;${message}&quot;">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Search - My Store</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210409 00:01:47.986" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" starttime="20210409 00:01:47.971" endtime="20210409 00:01:47.986"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${alertMessage}</arg>
-<arg>${message}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210409 00:01:48.002" level="INFO">Element 'css:.alert-warning' contains text 'No results were found for your search ""_____""'.</msg>
-<status status="PASS" starttime="20210409 00:01:47.986" endtime="20210409 00:01:48.002"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:47.971" endtime="20210409 00:01:48.002"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:43.281" endtime="20210409 00:01:48.002"/>
-</kw>
-<tag>results</tag>
-<status status="PASS" starttime="20210409 00:01:43.280" endtime="20210409 00:01:48.003"/>
-</test>
-<test id="s1-s1-s1-t5" name="Scenario5: No results search - pipe">
-<kw name="No result Search" library="HomePage">
-<arg>|||||</arg>
-<arg>No results were found for your search "|||||"</arg>
-<kw name="Given that I want to search for &quot;${text}&quot;" library="HomePage" sourcename="Given that I want to search for &quot;${item}&quot;">
-<kw name="Set Test Variable" library="BuiltIn">
-<arg>${item}</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20210409 00:01:48.005" level="INFO">${item} = |||||</msg>
-<status status="PASS" starttime="20210409 00:01:48.005" endtime="20210409 00:01:48.005"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:48.004" endtime="20210409 00:01:48.005"/>
-</kw>
-<kw name="When I search for this" library="HomePage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${searchText}</arg>
-<arg>${item}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210409 00:01:48.006" level="INFO">Typing text '|||||' into text field 'id:search_query_top'.</msg>
-<status status="PASS" starttime="20210409 00:01:48.005" endtime="20210409 00:01:48.081"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${searchButton}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210409 00:01:48.081" level="INFO">Clicking button 'name:submit_search'.</msg>
-<status status="PASS" starttime="20210409 00:01:48.081" endtime="20210409 00:01:53.689"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:48.005" endtime="20210409 00:01:53.690"/>
-</kw>
-<kw name="Then I must see the message &quot;${message}&quot;" library="HomePage" sourcename="Then I must see the message &quot;${message}&quot;">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Search - My Store</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210409 00:01:53.705" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" starttime="20210409 00:01:53.690" endtime="20210409 00:01:53.705"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${alertMessage}</arg>
-<arg>${message}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210409 00:01:53.720" level="INFO">Element 'css:.alert-warning' contains text 'No results were found for your search "|||||"'.</msg>
-<status status="PASS" starttime="20210409 00:01:53.706" endtime="20210409 00:01:53.720"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:53.690" endtime="20210409 00:01:53.720"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:48.004" endtime="20210409 00:01:53.720"/>
-</kw>
-<tag>results</tag>
-<status status="PASS" starttime="20210409 00:01:48.004" endtime="20210409 00:01:53.721"/>
-</test>
-<test id="s1-s1-s1-t6" name="Scenario6: No results search - slash">
-<kw name="No result Search" library="HomePage">
-<arg>//</arg>
-<arg>No results were found for your search "//"</arg>
-<kw name="Given that I want to search for &quot;${text}&quot;" library="HomePage" sourcename="Given that I want to search for &quot;${item}&quot;">
-<kw name="Set Test Variable" library="BuiltIn">
-<arg>${item}</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20210409 00:01:53.723" level="INFO">${item} = //</msg>
-<status status="PASS" starttime="20210409 00:01:53.723" endtime="20210409 00:01:53.723"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:53.723" endtime="20210409 00:01:53.723"/>
-</kw>
-<kw name="When I search for this" library="HomePage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${searchText}</arg>
-<arg>${item}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210409 00:01:53.724" level="INFO">Typing text '//' into text field 'id:search_query_top'.</msg>
-<status status="PASS" starttime="20210409 00:01:53.724" endtime="20210409 00:01:53.789"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${searchButton}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210409 00:01:53.789" level="INFO">Clicking button 'name:submit_search'.</msg>
-<status status="PASS" starttime="20210409 00:01:53.789" endtime="20210409 00:01:56.269"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:53.723" endtime="20210409 00:01:56.270"/>
-</kw>
-<kw name="Then I must see the message &quot;${message}&quot;" library="HomePage" sourcename="Then I must see the message &quot;${message}&quot;">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Search - My Store</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210409 00:01:56.284" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" starttime="20210409 00:01:56.270" endtime="20210409 00:01:56.285"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${alertMessage}</arg>
-<arg>${message}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210409 00:01:56.299" level="INFO">Element 'css:.alert-warning' contains text 'No results were found for your search "//"'.</msg>
-<status status="PASS" starttime="20210409 00:01:56.285" endtime="20210409 00:01:56.300"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:56.270" endtime="20210409 00:01:56.300"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:53.723" endtime="20210409 00:01:56.300"/>
-</kw>
-<tag>results</tag>
-<status status="PASS" starttime="20210409 00:01:53.722" endtime="20210409 00:01:56.300"/>
-</test>
-<test id="s1-s1-s1-t7" name="Scenario7: No results search - &lt;%">
-<kw name="No result Search" library="HomePage">
-<arg>&lt;%</arg>
-<arg>No results were found for your search "&lt;%"</arg>
-<kw name="Given that I want to search for &quot;${text}&quot;" library="HomePage" sourcename="Given that I want to search for &quot;${item}&quot;">
-<kw name="Set Test Variable" library="BuiltIn">
-<arg>${item}</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20210409 00:01:56.303" level="INFO">${item} = &lt;%</msg>
-<status status="PASS" starttime="20210409 00:01:56.303" endtime="20210409 00:01:56.303"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:56.302" endtime="20210409 00:01:56.303"/>
-</kw>
-<kw name="When I search for this" library="HomePage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${searchText}</arg>
-<arg>${item}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210409 00:01:56.304" level="INFO">Typing text '&lt;%' into text field 'id:search_query_top'.</msg>
-<status status="PASS" starttime="20210409 00:01:56.303" endtime="20210409 00:01:56.403"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${searchButton}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210409 00:01:56.404" level="INFO">Clicking button 'name:submit_search'.</msg>
-<status status="PASS" starttime="20210409 00:01:56.403" endtime="20210409 00:01:59.138"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:56.303" endtime="20210409 00:01:59.138"/>
-</kw>
-<kw name="Then I must see the message &quot;${message}&quot;" library="HomePage" sourcename="Then I must see the message &quot;${message}&quot;">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Search - My Store</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210409 00:01:59.144" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" starttime="20210409 00:01:59.139" endtime="20210409 00:01:59.145"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${alertMessage}</arg>
-<arg>${message}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210409 00:01:59.165" level="INFO">Element 'css:.alert-warning' contains text 'No results were found for your search "&lt;%"'.</msg>
-<status status="PASS" starttime="20210409 00:01:59.145" endtime="20210409 00:01:59.165"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:59.138" endtime="20210409 00:01:59.165"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:56.302" endtime="20210409 00:01:59.166"/>
-</kw>
-<tag>results</tag>
-<status status="PASS" starttime="20210409 00:01:56.302" endtime="20210409 00:01:59.166"/>
-</test>
-<test id="s1-s1-s1-t8" name="Scenario8: No results search - #">
-<kw name="No result Search" library="HomePage">
-<arg>/#</arg>
-<arg>No results were found for your search "/#"</arg>
-<kw name="Given that I want to search for &quot;${text}&quot;" library="HomePage" sourcename="Given that I want to search for &quot;${item}&quot;">
-<kw name="Set Test Variable" library="BuiltIn">
-<arg>${item}</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20210409 00:01:59.169" level="INFO">${item} = /#</msg>
-<status status="PASS" starttime="20210409 00:01:59.168" endtime="20210409 00:01:59.169"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:59.168" endtime="20210409 00:01:59.169"/>
-</kw>
-<kw name="When I search for this" library="HomePage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${searchText}</arg>
-<arg>${item}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210409 00:01:59.170" level="INFO">Typing text '/#' into text field 'id:search_query_top'.</msg>
-<status status="PASS" starttime="20210409 00:01:59.169" endtime="20210409 00:01:59.242"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${searchButton}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210409 00:01:59.242" level="INFO">Clicking button 'name:submit_search'.</msg>
-<status status="PASS" starttime="20210409 00:01:59.242" endtime="20210409 00:02:02.006"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:59.169" endtime="20210409 00:02:02.006"/>
-</kw>
-<kw name="Then I must see the message &quot;${message}&quot;" library="HomePage" sourcename="Then I must see the message &quot;${message}&quot;">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Search - My Store</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210409 00:02:02.012" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" starttime="20210409 00:02:02.007" endtime="20210409 00:02:02.012"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${alertMessage}</arg>
-<arg>${message}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210409 00:02:02.036" level="INFO">Element 'css:.alert-warning' contains text 'No results were found for your search "/#"'.</msg>
-<status status="PASS" starttime="20210409 00:02:02.012" endtime="20210409 00:02:02.036"/>
-</kw>
-<status status="PASS" starttime="20210409 00:02:02.007" endtime="20210409 00:02:02.036"/>
-</kw>
-<status status="PASS" starttime="20210409 00:01:59.168" endtime="20210409 00:02:02.036"/>
-</kw>
-<tag>results</tag>
-<status status="PASS" starttime="20210409 00:01:59.167" endtime="20210409 00:02:02.037"/>
-</test>
-<test id="s1-s1-s1-t9" name="Scenario8: No results search - empty">
-<kw name="No result Search" library="HomePage">
-<arg>${EMPTY}</arg>
-<arg>Please enter a search keyword</arg>
-<kw name="Given that I want to search for &quot;${text}&quot;" library="HomePage" sourcename="Given that I want to search for &quot;${item}&quot;">
-<kw name="Set Test Variable" library="BuiltIn">
-<arg>${item}</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20210409 00:02:02.040" level="INFO">${item} = </msg>
-<status status="PASS" starttime="20210409 00:02:02.040" endtime="20210409 00:02:02.040"/>
-</kw>
-<status status="PASS" starttime="20210409 00:02:02.039" endtime="20210409 00:02:02.040"/>
-</kw>
-<kw name="When I search for this" library="HomePage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${searchText}</arg>
-<arg>${item}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210409 00:02:02.040" level="INFO">Typing text '' into text field 'id:search_query_top'.</msg>
-<status status="PASS" starttime="20210409 00:02:02.040" endtime="20210409 00:02:02.097"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${searchButton}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210409 00:02:02.098" level="INFO">Clicking button 'name:submit_search'.</msg>
-<status status="PASS" starttime="20210409 00:02:02.098" endtime="20210409 00:02:05.189"/>
-</kw>
-<status status="PASS" starttime="20210409 00:02:02.040" endtime="20210409 00:02:05.189"/>
-</kw>
-<kw name="Then I must see the message &quot;${message}&quot;" library="HomePage" sourcename="Then I must see the message &quot;${message}&quot;">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Search - My Store</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210409 00:02:05.202" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" starttime="20210409 00:02:05.189" endtime="20210409 00:02:05.203"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${alertMessage}</arg>
-<arg>${message}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210409 00:02:05.218" level="INFO">Element 'css:.alert-warning' contains text 'Please enter a search keyword'.</msg>
-<status status="PASS" starttime="20210409 00:02:05.203" endtime="20210409 00:02:05.218"/>
-</kw>
-<status status="PASS" starttime="20210409 00:02:05.189" endtime="20210409 00:02:05.218"/>
-</kw>
-<status status="PASS" starttime="20210409 00:02:02.039" endtime="20210409 00:02:05.218"/>
-</kw>
-<tag>results</tag>
-<status status="PASS" starttime="20210409 00:02:02.038" endtime="20210409 00:02:05.218"/>
+<tag>doing</tag>
+<status status="PASS" starttime="20210409 20:58:58.312" endtime="20210409 20:59:01.279"/>
 </test>
 <kw name="Finish Session" library="Hooks" type="TEARDOWN">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210409 00:02:05.549" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-21.png"&gt;&lt;img src="selenium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210409 00:02:05.220" endtime="20210409 00:02:05.549"/>
+<msg timestamp="20210409 20:59:01.575" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-48.png"&gt;&lt;img src="selenium-screenshot-48.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210409 20:59:01.281" endtime="20210409 20:59:01.576"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210409 00:02:05.549" endtime="20210409 00:02:07.709"/>
+<status status="PASS" starttime="20210409 20:59:01.576" endtime="20210409 20:59:03.732"/>
 </kw>
-<status status="PASS" starttime="20210409 00:02:05.220" endtime="20210409 00:02:07.709"/>
+<status status="PASS" starttime="20210409 20:59:01.281" endtime="20210409 20:59:03.732"/>
 </kw>
-<doc>Test Home Screen</doc>
-<status status="PASS" starttime="20210409 00:00:55.474" endtime="20210409 00:02:07.709"/>
-</suite>
-<status status="PASS" starttime="20210409 00:00:55.472" endtime="20210409 00:02:07.712"/>
-</suite>
-<status status="PASS" starttime="20210409 00:00:55.452" endtime="20210409 00:02:07.715"/>
+<doc>Check Search functionality</doc>
+<status status="PASS" starttime="20210409 20:58:37.294" endtime="20210409 20:59:03.732"/>
 </suite>
 <statistics>
 <total>
-<stat pass="9" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="9" fail="0" skip="0">results</stat>
+<stat pass="2" fail="0" skip="0">doing</stat>
 </tag>
 <suite>
-<stat pass="9" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
-<stat pass="9" fail="0" skip="0" id="s1-s1" name="Home">Tests.Home</stat>
-<stat pass="9" fail="0" skip="0" id="s1-s1-s1" name="homeTest">Tests.Home.homeTest</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="homeTest">homeTest</stat>
 </suite>
 </statistics>
 <errors>
