@@ -1,118 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0 (Python 3.9.1 on win32)" generated="20210409 20:58:37.292" rpa="false" schemaversion="2">
+<robot generator="Robot 4.0 (Python 3.9.1 on win32)" generated="20210410 02:37:18.255" rpa="false" schemaversion="2">
 <suite id="s1" name="homeTest" source="C:\RobotFramework\projectRobotWeb\Tests\Home\homeTest.robot">
 <kw name="Start Session" library="Hooks" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${BASE_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210409 20:58:37.495" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
-<status status="PASS" starttime="20210409 20:58:37.495" endtime="20210409 20:58:53.908"/>
+<msg timestamp="20210410 02:37:18.433" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20210410 02:37:18.433" endtime="20210410 02:37:28.332"/>
 </kw>
 <kw name="Set Window Size" library="SeleniumLibrary">
 <arg>${WIDTH}</arg>
 <arg>${HEIGHT}</arg>
 <doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" starttime="20210409 20:58:53.909" endtime="20210409 20:58:54.023"/>
+<status status="PASS" starttime="20210410 02:37:28.332" endtime="20210410 02:37:28.447"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>${TIMEOUT}</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20210409 20:58:54.023" endtime="20210409 20:58:54.024"/>
+<status status="PASS" starttime="20210410 02:37:28.448" endtime="20210410 02:37:28.448"/>
 </kw>
 <kw name="Set Selenium Timeout" library="SeleniumLibrary">
 <arg>${TIMEOUT}</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20210409 20:58:54.024" endtime="20210409 20:58:54.025"/>
+<status status="PASS" starttime="20210410 02:37:28.449" endtime="20210410 02:37:28.449"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>My Store</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210409 20:58:54.028" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20210409 20:58:54.025" endtime="20210409 20:58:54.028"/>
+<msg timestamp="20210410 02:37:28.453" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20210410 02:37:28.449" endtime="20210410 02:37:28.453"/>
 </kw>
-<status status="PASS" starttime="20210409 20:58:37.494" endtime="20210409 20:58:54.029"/>
+<status status="PASS" starttime="20210410 02:37:18.432" endtime="20210410 02:37:28.453"/>
 </kw>
-<test id="s1-t1" name="Scenario2: Go to Contact us">
-<kw name="When I access the navigation bar link &quot;Contact us&quot;" library="HomePage" sourcename="When I access the navigation bar link &quot;${linkText}&quot;">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210409 20:58:54.030" endtime="20210409 20:58:54.050"/>
+<test id="s1-t1" name="Scenario5: See home slider and offers">
+<kw name="Then I see the Home slider" library="HomePage">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${homeSlider}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210410 02:37:28.473" level="INFO">Element 'id:homepage-slider' is displayed.</msg>
+<status status="PASS" starttime="20210410 02:37:28.454" endtime="20210410 02:37:28.473"/>
+</kw>
+<status status="PASS" starttime="20210410 02:37:28.454" endtime="20210410 02:37:28.473"/>
+</kw>
+<kw name="And banner offers" library="HomePage">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${bannerOffers}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210410 02:37:28.494" level="INFO">Element 'id:htmlcontent_top' is displayed.</msg>
+<status status="PASS" starttime="20210410 02:37:28.474" endtime="20210410 02:37:28.494"/>
+</kw>
+<status status="PASS" starttime="20210410 02:37:28.473" endtime="20210410 02:37:28.494"/>
+</kw>
+<kw name="And I can navigate throught home slider images" library="HomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${homeSliderNextButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210410 02:37:28.495" level="INFO">Clicking element 'css:.bx-next'.</msg>
+<status status="PASS" starttime="20210410 02:37:28.495" endtime="20210410 02:37:28.536"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
+<arg>${homeSliderPrevButton}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210409 20:58:54.051" level="INFO">Clicking element 'xpath://nav//*[contains(text(), "Contact us")]'.</msg>
-<status status="PASS" starttime="20210409 20:58:54.050" endtime="20210409 20:58:58.290"/>
+<msg timestamp="20210410 02:37:28.536" level="INFO">Clicking element 'css:.bx-prev'.</msg>
+<status status="PASS" starttime="20210410 02:37:28.536" endtime="20210410 02:37:28.575"/>
 </kw>
-<status status="PASS" starttime="20210409 20:58:54.029" endtime="20210409 20:58:58.290"/>
-</kw>
-<kw name="Then I must see the page with the header &quot;CONTACT US&quot;" library="HomePage" sourcename="Then I must see the page with the header &quot;${text}&quot;">
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>xpath://h1[contains(@class,"page-heading")]</arg>
-<arg>${text}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210409 20:58:58.310" level="INFO">Element 'xpath://h1[contains(@class,"page-heading")]' contains text 'CONTACT US'.</msg>
-<status status="PASS" starttime="20210409 20:58:58.291" endtime="20210409 20:58:58.310"/>
-</kw>
-<status status="PASS" starttime="20210409 20:58:58.291" endtime="20210409 20:58:58.310"/>
+<status status="PASS" starttime="20210410 02:37:28.495" endtime="20210410 02:37:28.575"/>
 </kw>
 <tag>doing</tag>
-<status status="PASS" starttime="20210409 20:58:54.029" endtime="20210409 20:58:58.311"/>
-</test>
-<test id="s1-t2" name="Scenario3: Go to Sign in">
-<kw name="When I access the navigation bar link &quot;Sign in&quot;" library="HomePage" sourcename="When I access the navigation bar link &quot;${linkText}&quot;">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210409 20:58:58.313" endtime="20210409 20:58:58.332"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210409 20:58:58.332" level="INFO">Clicking element 'xpath://nav//*[contains(text(), "Sign in")]'.</msg>
-<status status="PASS" starttime="20210409 20:58:58.332" endtime="20210409 20:59:01.258"/>
-</kw>
-<status status="PASS" starttime="20210409 20:58:58.313" endtime="20210409 20:59:01.258"/>
-</kw>
-<kw name="Then I must see the page with the header &quot;AUTHENTICATION&quot;" library="HomePage" sourcename="Then I must see the page with the header &quot;${text}&quot;">
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>xpath://h1[contains(@class,"page-heading")]</arg>
-<arg>${text}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210409 20:59:01.278" level="INFO">Element 'xpath://h1[contains(@class,"page-heading")]' contains text 'AUTHENTICATION'.</msg>
-<status status="PASS" starttime="20210409 20:59:01.259" endtime="20210409 20:59:01.278"/>
-</kw>
-<status status="PASS" starttime="20210409 20:59:01.259" endtime="20210409 20:59:01.278"/>
-</kw>
-<tag>doing</tag>
-<status status="PASS" starttime="20210409 20:58:58.312" endtime="20210409 20:59:01.279"/>
+<status status="PASS" starttime="20210410 02:37:28.453" endtime="20210410 02:37:28.576"/>
 </test>
 <kw name="Finish Session" library="Hooks" type="TEARDOWN">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210409 20:59:01.575" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-48.png"&gt;&lt;img src="selenium-screenshot-48.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210409 20:59:01.281" endtime="20210409 20:59:01.576"/>
+<msg timestamp="20210410 02:37:29.101" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-66.png"&gt;&lt;img src="selenium-screenshot-66.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210410 02:37:28.578" endtime="20210410 02:37:29.102"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210409 20:59:01.576" endtime="20210409 20:59:03.732"/>
+<status status="PASS" starttime="20210410 02:37:29.102" endtime="20210410 02:37:32.013"/>
 </kw>
-<status status="PASS" starttime="20210409 20:59:01.281" endtime="20210409 20:59:03.732"/>
+<status status="PASS" starttime="20210410 02:37:28.578" endtime="20210410 02:37:32.013"/>
 </kw>
 <doc>Check Search functionality</doc>
-<status status="PASS" starttime="20210409 20:58:37.294" endtime="20210409 20:59:03.732"/>
+<status status="PASS" starttime="20210410 02:37:18.257" endtime="20210410 02:37:32.013"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="2" fail="0" skip="0">doing</stat>
+<stat pass="1" fail="0" skip="0">doing</stat>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="homeTest">homeTest</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="homeTest">homeTest</stat>
 </suite>
 </statistics>
 <errors>
