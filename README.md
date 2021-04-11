@@ -17,6 +17,10 @@ pip install robotframework
 pip install --upgrade robotframework-seleniumlibrary
 ```
 
+```shell
+pip install robotframework-faker
+```
+
 - Add webdriver to the path (eg: Chromedriver, geckodriver)
 
 ## Screenshots, Console log and reports:

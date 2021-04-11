@@ -1,5 +1,6 @@
 ***Settings
 Library                 SeleniumLibrary
+Library                 FakerLibrary
 
 Resource                Hooks.robot
 Resource                Pages/SearchPage.robot
