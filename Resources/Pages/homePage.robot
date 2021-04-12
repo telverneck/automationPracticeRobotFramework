@@ -16,7 +16,14 @@ ${homeSliderPrevButton}             css:.bx-prev
 ${sponsorshipArea}                  css:#htmlcontent_home ul.htmlcontent-home.clearfix.row
 ${facebookArea}                     id:facebook_block
 ${aboutUsArea}                      id:cmsinfo_block
-
+${facebookLink}                     css:#social_block li.facebook
+${twitterLink}                      css:#social_block li.twitter
+${youtubeLink}                      css:#social_block li.youtube
+${googlePlusLink}                   css:#social_block li.google-plus
+${successAlert}                     css:.alert-success
+${errorAlert}                       css:.alert-danger
+${newsletterText}                   id:newsletter-input  
+${newsletterSubmitButton}           name:submitNewsletter 
 
 
 ***Keywords***
@@ -42,6 +49,17 @@ and I submit an option "${item}"
 
 When I scroll down until the Special category
     Execute Javascript      window.scrollTo(0,2000)
+
+When I scroll down to the bottom
+    Execute Javascript      window.scrollTo(0,document.body.scrollHeight)
+
+And I submit a valid newsletter email
+    ${email}=       Free Email  #random fake email
+    Input Email For Newsletter    ${email}  
+    
+
+And I submit a invalid newsletter email "${invalidEmail}"
+    Input Email For Newsletter    ${invalidEmail}
 
 ###################### THEN #######################
 And banner offers
@@ -83,7 +101,19 @@ Then I must see the Facebook area
 Then I must see the About us information
     Element Should Be Visible         ${aboutUsArea}    
     
+Then I must see all social media links
+    Element Should Be Visible         ${facebookLink}    
+    Element Should Be Visible         ${twitterLink}    
+    Element Should Be Visible         ${youtubeLink}    
+    Element Should Be Visible         ${googlePlusLink}  
+    
+Then I must see a sucess alert with text: "${message}"
+    Wait Until Element Is Visible          ${successAlert}
+    Element Should Contain                 ${successAlert}       ${message}
 
+Then I must see an error alert with text: "${errorMessage}"
+    Wait Until Element Is Visible          ${errorAlert}       ${LONG_TIMEOUT}
+    Element Should Contain                 ${errorAlert}       ${errorMessage}
 
 
 #KEYWORDS
@@ -103,3 +133,14 @@ Product Menu Navigation
     When I navigate in the product menu "${category}"
     and I submit an option "${subItem}"
     Then I must see the results 
+
+Input Email For Newsletter
+    [Arguments]      ${email}
+    Input Text       ${newsletterText}      ${email}
+    Click Button     ${newsletterSubmitButton}
+
+Wrong Newsletter
+    [Arguments]     ${wrongEmail}   ${messageText}
+    When I scroll down to the bottom
+    And I submit a invalid newsletter email "${wrongEmail}"
+    Then I must see an error alert with text: "${messageText}"

@@ -71,3 +71,47 @@ Scenario15: About us
     When I scroll down until the Special category
     Then I must see the About us information
 
+Scenario16: Footer - social media
+    When I scroll down to the bottom
+    Then I must see all social media links
+
+Scenario17: Footer - Newsletter - valid email
+    When I scroll down to the bottom
+    And I submit a valid newsletter email
+    Then I must see a sucess alert with text: "Newsletter : You have successfully subscribed to this newsletter."
+
+
+Scenario18: Footer - Newsletter - invalid email - number
+    [Template]          Wrong Newsletter
+    [Tags]  doing
+    321564              Newsletter : Invalid email address.
+
+Scenario19: Footer - Newsletter - invalid email - empty
+    [Template]          Wrong Newsletter
+    [Tags]  doing
+    ${EMPTY}            Newsletter : Invalid email address.
+
+Scenario20: Footer - Newsletter - invalid email - wrong format
+    [Template]          Wrong Newsletter
+    [Tags]  doing
+    wrong&email.com     Newsletter : Invalid email address.
+
+Scenario21: Footer - Newsletter - invalid email - missing .com
+    [Template]          Wrong Newsletter
+    [Tags]  doing
+    wrong@email         Newsletter : Invalid email address.
+
+Scenario22: Footer - Newsletter - invalid email - missing information
+    [Template]          Wrong Newsletter
+    [Tags]  doing
+    wrong@email.        Newsletter : Invalid email address.
+
+Scenario23: Footer - Newsletter - invalid email - special characters
+    [Template]          Wrong Newsletter
+    [Tags]  doing
+    --                  Newsletter : Invalid email address.
+
+Scenario24: Footer - Newsletter - invalid email - special characters
+    [Template]          Wrong Newsletter
+    [Tags]  doing
+    //                  Newsletter : Invalid email address.
