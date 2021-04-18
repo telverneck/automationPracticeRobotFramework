@@ -6,6 +6,7 @@ Resource                Hooks.robot
 Resource                Pages/SearchPage.robot
 Resource                Pages/HomePage.robot
 Resource                Pages/CartPage.robot
+Resource                Pages/SignInPage.robot
 
 ***Variables
 ${BASE_URL}             http://automationpractice.com/index.php

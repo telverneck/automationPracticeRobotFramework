@@ -48,4 +48,5 @@ Then I must check this item "${searchItem}" in the cart
     Element Should Be Visible           ${cartSummary}
     Element Should Contain              ${productInCart}            ${searchItem}
 
-
+Set state
+    Select From List By Index       ${stateDropdown}        2
