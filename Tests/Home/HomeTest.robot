@@ -80,7 +80,6 @@ Scenario17: Footer - Newsletter - valid email
     And I submit a valid newsletter email
     Then I must see a sucess alert with text: "Newsletter : You have successfully subscribed to this newsletter."
 
-
 Scenario18: Footer - Newsletter - invalid email - number
     [Template]          Wrong Newsletter
     [Tags]  doing

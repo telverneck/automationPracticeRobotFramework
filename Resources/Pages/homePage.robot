@@ -51,7 +51,9 @@ When I scroll down until the Special category
     Execute Javascript      window.scrollTo(0,2000)
 
 When I scroll down to the bottom
-    Execute Javascript      window.scrollTo(0,document.body.scrollHeight)
+    Execute Javascript              window.scrollTo(0,document.body.scrollHeight)
+    Wait Until Element Is Visible   ${newsletterSubmitButton}
+    Element Should Be Visible       ${newsletterSubmitButton}
 
 And I submit a valid newsletter email
     ${email}=       Free Email  #random fake email

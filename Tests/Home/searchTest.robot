@@ -10,7 +10,7 @@ Suite Teardown           Finish Session
 ***Test Cases***
 Scenario1: Search valid content
     [Tags]      smoke
-    Given that I want to search for "Blouse"
+    Given that I want to search for "t-shirt"
     When I search for this
     Then I must see the results 
 
