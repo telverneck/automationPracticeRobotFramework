@@ -27,6 +27,11 @@ ${newsletterSubmitButton}           name:submitNewsletter
 
 
 ***Keywords***
+###################### GIVEN #######################
+Given that I access the "${page}" and check the header "${header}"
+    home navigation bar     ${page}     ${header}
+
+
 ###################### WHEN #######################
 When I access the navigation bar link "${linkText}"
     Wait Until Element Is Visible   xpath://nav//*[contains(text(), "${linkText}")]

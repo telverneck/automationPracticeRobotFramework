@@ -15,4 +15,7 @@ ${TIMEOUT}              20
 ${LONG_TIMEOUT}         30    
 ${WIDTH}                1400    
 ${HEIGHT}               900
+${USERLOGIN}            telverneck@hotmail.com
+${USERPASSWORD}         123456
+
 

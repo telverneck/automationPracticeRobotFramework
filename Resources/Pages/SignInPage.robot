@@ -13,13 +13,18 @@ ${addressAliasText}             id:alias
 ${registerButton}               id:submitAccount 
 ${portalCodeText}               id:postcode 
 ${infoAccountLabel}             class:info-account
+${invalidEmailAlert}            css:.alert-danger
+${emailLoginText}               id:email
+${passwordLoginText}            id:passwd
+${signInButton}                 id:SubmitLogin 
+${signOutButton}                class:logout
+
 
 
 ***Keywords***
 When I submit a valid random email
     ${email}=       Free Email  #random fake email
-    Input Text      ${emailText}        ${email}
-    Click Button    ${createAccountButton}
+    Submit Email    ${email}
 
 And I submit all personal information
     Wait Until Element Is Visible           ${firstNameText} 
@@ -34,10 +39,23 @@ And I submit all personal information
     Select From List By Value   ${stateDropdown}    ${FAKERDATA}[randomNumber]
 
     Click Element       ${registerButton}
+When I submit a invalid email "${email}"
+     Submit Email   ${email}
+
+When I submit use "${login}" and password "${password}"
+    Input Text      ${emailLoginText}           ${login}
+    Input Text      ${passwordLoginText}        ${password}
+    Click Element   ${signInButton}
+
 
 Then I must see my account area
     Wait Until Element Is Visible   ${infoAccountLabel}
     Element Should Contain          ${infoAccountLabel}     Welcome to your account
+
+And I logout
+    Wait Until Element Is Visible   ${infoAccountLabel}
+    Click Element                   ${signOutButton}  
+
 
 And I have random data
     ${FAKERFIRSTNAME}=      First Name
@@ -54,3 +72,34 @@ And I have random data
     ...     randomNumber=${FAKERNUMBER}
 
 
+Then I must see error message "${message}"
+    Wait Until Element Is Visible       ${invalidEmailAlert}
+    Element Should Contain              ${invalidEmailAlert}     ${message}
+
+
+
+Submit Email    
+    [Arguments]     ${email}
+    Input Text      ${emailText}        ${email}
+    Click Button    ${createAccountButton}
+
+Wrong User Creation 
+    [Arguments]     ${wrongEmail}       ${message}
+    Given that I access the "Sign in" and check the header "AUTHENTICATION"    
+    When I submit a invalid email "${wrongEmail}"
+    Then I must see error message "${message}"
+
+Wrong login
+    [Arguments]     ${wrongEmail}       ${wrongPassword}     ${message}
+    Access login    ${wrongEmail}       ${wrongPassword}
+    Then I must see error message "${message}"
+
+login with 
+    [Arguments]     ${USERLOGIN}        ${USERPASSWORD}
+    Access login    ${USERLOGIN}        ${USERPASSWORD}
+    Then I must see my account area
+
+Access login
+    [Arguments]     ${email}       ${passssword}
+    Given that I access the "Sign in" and check the header "AUTHENTICATION"
+    When I submit use "${email}" and password "${passssword}"
