@@ -114,7 +114,7 @@ Then I must see all social media links
     Element Should Be Visible         ${youtubeLink}    
     Element Should Be Visible         ${googlePlusLink}  
     
-Then I must see a sucess alert with text: "${message}"
+Then I must see a success alert with text: "${message}"
     Wait Until Element Is Visible          ${successAlert}
     Element Should Contain                 ${successAlert}       ${message}
 
