@@ -1,5 +1,5 @@
 ***Settings***
-Documentation           Check Search functionality 
+Documentation           Check Cart functionality 
 
 Resource                ../../Resources/Base.robot
 

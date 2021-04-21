@@ -57,19 +57,6 @@ And I logout
     Click Element                   ${signOutButton}  
 
 
-And I have random data
-    ${FAKERFIRSTNAME}=      First Name
-    ${FAKERLASTNAME}=       Last Name
-    ${FAKERADDRESS}=        Street Address
-    ${FAKERPASSWORD}=       Password    length=10
-    ${FAKERPHONE}=          Random Number   digits=9 
-    ${FAKERZIPCODE}=        Postalcode
-    ${FAKERCITY}=           City
-    ${FAKERNUMBER}=         Randomize Nb Elements   le=2    min=1    max=50
-
-    Set Test Variable   &{FAKERDATA}    name=${FAKERFIRSTNAME}  lastName=${FAKERLASTNAME}   address=${FAKERADDRESS} 
-    ...     password=${FAKERPASSWORD}   phone=${FAKERPHONE}     zipCode=${FAKERZIPCODE}     city=${FAKERCITY}
-    ...     randomNumber=${FAKERNUMBER}
 
 
 Then I must see error message "${message}"

@@ -1,5 +1,5 @@
 ***Settings***
-Documentation           Check Search functionality 
+Documentation           Check Sign In functionality 
 
 Resource                ../../Resources/Base.robot
 
