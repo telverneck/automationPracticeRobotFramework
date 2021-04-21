@@ -21,6 +21,10 @@ pip install --upgrade robotframework-seleniumlibrary
 pip install robotframework-faker
 ```
 
+```shell
+pip install requests
+```
+
 - Add webdriver to the path (eg: Chromedriver, geckodriver)
 
 ## Screenshots, Console log and reports:
@@ -65,3 +69,10 @@ robot -v BROWSER:firefox -d ./logs -i smoke tests
 ```
 
 Note: BROWSER is a variable set in "Resources\Base.robot" . Always match your browser variable description
+
+
+## How to run API Tests :
+
+```shell
+robot -d .\API\Logs\ .\API\
+```

@@ -27,25 +27,16 @@ When I submit a valid random email
     Submit Email    ${email}
 
 And I submit all personal information
-    Wait Until Element Is Visible           ${firstNameText} 
-    And I have random data
-    Input Text      ${firstNameText}        ${FAKERDATA}[name]
-    Input Text      ${LastNameText}         ${FAKERDATA}[lastName]
-    Input Text      ${addressText}          ${FAKERDATA}[address]
-    Input Text      ${passwordText}         ${FAKERDATA}[password]
-    Input Text      ${mobilePhoneText}      ${FAKERDATA}[phone]
-    Input Text      ${portalCodeText}       ${FAKERDATA}[zipCode]
-    Input Text      ${cityText}             ${FAKERDATA}[city]
-    Select From List By Value   ${stateDropdown}    ${FAKERDATA}[randomNumber]
+    Fill All Mandatory Fields
+    Click Element               ${registerButton}
 
-    Click Element       ${registerButton}
 When I submit a invalid email "${email}"
-     Submit Email   ${email}
+    Submit Email               ${email}
 
 When I submit use "${login}" and password "${password}"
-    Input Text      ${emailLoginText}           ${login}
-    Input Text      ${passwordLoginText}        ${password}
-    Click Element   ${signInButton}
+    Input Text                  ${emailLoginText}           ${login}
+    Input Text                  ${passwordLoginText}        ${password}
+    Click Element               ${signInButton}
 
 
 Then I must see my account area
@@ -57,13 +48,22 @@ And I logout
     Click Element                   ${signOutButton}  
 
 
-
-
 Then I must see error message "${message}"
     Wait Until Element Is Visible       ${invalidEmailAlert}
     Element Should Contain              ${invalidEmailAlert}     ${message}
 
 
+Fill All Mandatory Fields
+    Wait Until Element Is Visible           ${firstNameText} 
+    And I have random data
+    Input Text                  ${firstNameText}        ${FAKERDATA}[name]
+    Input Text                  ${LastNameText}         ${FAKERDATA}[lastName]
+    Input Text                  ${addressText}          ${FAKERDATA}[address]
+    Input Text                  ${passwordText}         ${FAKERDATA}[password]
+    Input Text                  ${mobilePhoneText}      ${FAKERDATA}[phone]
+    Input Text                  ${portalCodeText}       ${FAKERDATA}[zipCode]
+    Input Text                  ${cityText}             ${FAKERDATA}[city]
+    Select From List By Value   ${stateDropdown}    ${FAKERDATA}[randomNumber]
 
 Submit Email    
     [Arguments]     ${email}

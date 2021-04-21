@@ -37,22 +37,22 @@ Scenario5: No results search - underline
 Scenario6: No results search - pipe
     [Tags]      results
     [Template]  No result Search
-    |||||     No results were found for your search "|||||"
+    |||||       No results were found for your search "|||||"
 
 Scenario7: No results search - slash
     [Tags]      results
     [Template]  No result Search
-    //     No results were found for your search "//"
+    //          No results were found for your search "//"
 
 Scenario8: No results search - <%
     [Tags]      results
     [Template]  No result Search
-    <%     No results were found for your search "<%"
+    <%          No results were found for your search "<%"
 
 Scenario9: No results search - #
     [Tags]      results
     [Template]  No result Search
-    /#     No results were found for your search "/#"
+    /#          No results were found for your search "/#"
 
 
 Scenario10: No results search - empty
