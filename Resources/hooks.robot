@@ -9,4 +9,4 @@ Start Session
 
 Finish Session
     Capture Page Screenshot
-    Close Browser
+    Close All Browsers

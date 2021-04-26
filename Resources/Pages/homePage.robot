@@ -4,7 +4,7 @@ ${signInNavOption}                  css:nav div.header_user_info
 ${contactUsNavOption}               css:nav div#contact-link 
 ${phoneNavOption}                   css:nav span.shop-phone 
 ${navigationBar}                    css:#header .nav  
-${pageHeader}                       xpath://h1[contains(@class,"page-heading")]    
+${pageHeader}                       xpath://h1[contains(@class,"page-subheading")] | //h1[contains(@class,"page-heading")]    
 ${popularTab}                       css:a.homefeatured    
 ${bestSellersTab}                   css:a.blockbestsellers 
 ${activePopularProductList}         css:.product_list.grid.row.homefeatured.tab-pane.active

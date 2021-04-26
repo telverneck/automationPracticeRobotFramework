@@ -1,41 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0 (Python 3.9.1 on win32)" generated="20210421 01:08:19.846" rpa="false" schemaversion="2">
-<suite id="s1" name="ContactUs" source="C:\RobotFramework\projectRobotWeb\Tests\ContactUs">
-<suite id="s1-s1" name="contactUsTest" source="C:\RobotFramework\projectRobotWeb\Tests\ContactUs\contactUsTest.robot">
+<robot generator="Robot 4.0 (Python 3.9.1 on win32)" generated="20210426 01:15:53.066" rpa="false" schemaversion="2">
+<suite id="s1" name="Dashboard" source="C:\RobotFramework\projectRobotWeb\Tests\SignIn\dashboard.robot">
 <kw name="Start Session" library="Hooks" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${BASE_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210421 01:08:20.390" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
-<status status="PASS" starttime="20210421 01:08:20.390" endtime="20210421 01:08:29.052"/>
+<msg timestamp="20210426 01:15:53.595" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20210426 01:15:53.595" endtime="20210426 01:16:03.201"/>
 </kw>
 <kw name="Set Window Size" library="SeleniumLibrary">
 <arg>${WIDTH}</arg>
 <arg>${HEIGHT}</arg>
 <doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" starttime="20210421 01:08:29.052" endtime="20210421 01:08:29.164"/>
+<status status="PASS" starttime="20210426 01:16:03.202" endtime="20210426 01:16:03.314"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>${TIMEOUT}</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20210421 01:08:29.164" endtime="20210421 01:08:29.165"/>
+<status status="PASS" starttime="20210426 01:16:03.314" endtime="20210426 01:16:03.315"/>
 </kw>
 <kw name="Set Selenium Timeout" library="SeleniumLibrary">
 <arg>${TIMEOUT}</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20210421 01:08:29.166" endtime="20210421 01:08:29.167"/>
+<status status="PASS" starttime="20210426 01:16:03.316" endtime="20210426 01:16:03.317"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>My Store</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210421 01:08:29.170" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20210421 01:08:29.167" endtime="20210421 01:08:29.170"/>
+<msg timestamp="20210426 01:16:03.321" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20210426 01:16:03.317" endtime="20210426 01:16:03.321"/>
 </kw>
-<status status="PASS" starttime="20210421 01:08:20.389" endtime="20210421 01:08:29.170"/>
+<status status="PASS" starttime="20210426 01:15:53.595" endtime="20210426 01:16:03.321"/>
 </kw>
-<test id="s1-s1-t1" name="Scenario1: Send a message">
-<kw name="Given that I access the &quot;Contact us&quot; and check the header &quot;CUSTOMER SERVICE - CONTACT US&quot;" library="HomePage" sourcename="Given that I access the &quot;${page}&quot; and check the header &quot;${header}&quot;">
+<test id="s1-t1" name="Scenario1: Dashboard - Order history and details">
+<kw name="login with" library="SignInPage" type="SETUP">
+<arg>${USERLOGIN}</arg>
+<arg>${USERPASSWORD}</arg>
+<kw name="Access login" library="SignInPage">
+<arg>${USERLOGIN}</arg>
+<arg>${USERPASSWORD}</arg>
+<kw name="Given that I access the &quot;Sign in&quot; and check the header &quot;AUTHENTICATION&quot;" library="HomePage" sourcename="Given that I access the &quot;${page}&quot; and check the header &quot;${header}&quot;">
 <kw name="home navigation bar" library="HomePage">
 <arg>${page}</arg>
 <arg>${header}</arg>
@@ -43,199 +48,98 @@
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210421 01:08:29.172" endtime="20210421 01:08:29.191"/>
+<status status="PASS" starttime="20210426 01:16:03.324" endtime="20210426 01:16:03.345"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:29.192" level="INFO">Clicking element 'xpath://nav//*[contains(text(), "Contact us")]'.</msg>
-<status status="PASS" starttime="20210421 01:08:29.191" endtime="20210421 01:08:32.740"/>
+<msg timestamp="20210426 01:16:03.346" level="INFO">Clicking element 'xpath://nav//*[contains(text(), "Sign in")]'.</msg>
+<status status="PASS" starttime="20210426 01:16:03.345" endtime="20210426 01:16:05.311"/>
 </kw>
-<status status="PASS" starttime="20210421 01:08:29.172" endtime="20210421 01:08:32.741"/>
+<status status="PASS" starttime="20210426 01:16:03.323" endtime="20210426 01:16:05.311"/>
 </kw>
 <kw name="Then I must see the page with the header &quot;${textHeader}&quot;" library="HomePage" sourcename="Then I must see the page with the header &quot;${text}&quot;">
 <kw name="Element Should Contain" library="SeleniumLibrary">
 <arg>${pageHeader}</arg>
 <arg>${text}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210421 01:08:32.761" level="INFO">Element 'xpath://h1[contains(@class,"page-heading")]' contains text 'CUSTOMER SERVICE - CONTACT US'.</msg>
-<status status="PASS" starttime="20210421 01:08:32.741" endtime="20210421 01:08:32.761"/>
+<msg timestamp="20210426 01:16:05.335" level="INFO">Element 'xpath://h1[contains(@class,"page-subheading")] | //h1[contains(@class,"page-heading")]' contains text 'AUTHENTICATION'.</msg>
+<status status="PASS" starttime="20210426 01:16:05.311" endtime="20210426 01:16:05.335"/>
 </kw>
-<status status="PASS" starttime="20210421 01:08:32.741" endtime="20210421 01:08:32.761"/>
+<status status="PASS" starttime="20210426 01:16:05.311" endtime="20210426 01:16:05.335"/>
 </kw>
-<status status="PASS" starttime="20210421 01:08:29.172" endtime="20210421 01:08:32.761"/>
+<status status="PASS" starttime="20210426 01:16:03.323" endtime="20210426 01:16:05.335"/>
 </kw>
-<status status="PASS" starttime="20210421 01:08:29.171" endtime="20210421 01:08:32.761"/>
+<status status="PASS" starttime="20210426 01:16:03.323" endtime="20210426 01:16:05.335"/>
 </kw>
-<kw name="When I send a message" library="ContactUsPage">
-<kw name="Fill mandatory contact fields" library="ContactUsPage">
-<kw name="And I have random data" library="Base">
-<kw name="First Name" library="FakerLibrary">
-<var>${FAKERFIRSTNAME}</var>
-<msg timestamp="20210421 01:08:32.763" level="INFO">${FAKERFIRSTNAME} = Heidi</msg>
-<status status="PASS" starttime="20210421 01:08:32.763" endtime="20210421 01:08:32.763"/>
+<kw name="When I submit use &quot;${email}&quot; and password &quot;${passssword}&quot;" library="SignInPage" sourcename="When I submit use &quot;${login}&quot; and password &quot;${password}&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${emailLoginText}</arg>
+<arg>${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210426 01:16:05.336" level="INFO">Typing text 'telverneck@hotmail.com' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20210426 01:16:05.336" endtime="20210426 01:16:05.470"/>
 </kw>
-<kw name="Last Name" library="FakerLibrary">
-<var>${FAKERLASTNAME}</var>
-<msg timestamp="20210421 01:08:32.763" level="INFO">${FAKERLASTNAME} = Beasley</msg>
-<status status="PASS" starttime="20210421 01:08:32.763" endtime="20210421 01:08:32.764"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${passwordLoginText}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210426 01:16:05.470" level="INFO">Typing text '123456' into text field 'id:passwd'.</msg>
+<status status="PASS" starttime="20210426 01:16:05.470" endtime="20210426 01:16:05.573"/>
 </kw>
-<kw name="Street Address" library="FakerLibrary">
-<var>${FAKERADDRESS}</var>
-<doc>:example '791 Crist Parks'</doc>
-<msg timestamp="20210421 01:08:32.764" level="INFO">${FAKERADDRESS} = 88686 Johnson Via Suite 359</msg>
-<status status="PASS" starttime="20210421 01:08:32.764" endtime="20210421 01:08:32.764"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${signInButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210426 01:16:05.573" level="INFO">Clicking element 'id:SubmitLogin'.</msg>
+<status status="PASS" starttime="20210426 01:16:05.573" endtime="20210426 01:16:07.898"/>
 </kw>
-<kw name="Password" library="FakerLibrary">
-<var>${FAKERPASSWORD}</var>
-<arg>length=10</arg>
-<doc>Generate a random password of the specified ``length``.</doc>
-<msg timestamp="20210421 01:08:32.764" level="INFO">${FAKERPASSWORD} = 1s961YGd*4</msg>
-<status status="PASS" starttime="20210421 01:08:32.764" endtime="20210421 01:08:32.764"/>
+<status status="PASS" starttime="20210426 01:16:05.335" endtime="20210426 01:16:07.898"/>
 </kw>
-<kw name="Random Number" library="FakerLibrary">
-<var>${FAKERPHONE}</var>
-<arg>digits=9</arg>
-<doc>Generate a random integer according to the following rules:</doc>
-<msg timestamp="20210421 01:08:32.765" level="INFO">${FAKERPHONE} = 844765550</msg>
-<status status="PASS" starttime="20210421 01:08:32.765" endtime="20210421 01:08:32.765"/>
+<status status="PASS" starttime="20210426 01:16:03.323" endtime="20210426 01:16:07.899"/>
 </kw>
-<kw name="Postalcode" library="FakerLibrary">
-<var>${FAKERZIPCODE}</var>
-<msg timestamp="20210421 01:08:32.765" level="INFO">${FAKERZIPCODE} = 91294</msg>
-<status status="PASS" starttime="20210421 01:08:32.765" endtime="20210421 01:08:32.765"/>
-</kw>
-<kw name="City" library="FakerLibrary">
-<var>${FAKERCITY}</var>
-<doc>:example 'Sashabury'</doc>
-<msg timestamp="20210421 01:08:32.766" level="INFO">${FAKERCITY} = Jonathantown</msg>
-<status status="PASS" starttime="20210421 01:08:32.765" endtime="20210421 01:08:32.766"/>
-</kw>
-<kw name="Randomize Nb Elements" library="FakerLibrary">
-<var>${FAKERNUMBER}</var>
-<arg>le=2</arg>
-<arg>min=1</arg>
-<arg>max=50</arg>
-<doc>Generate a random integer near ``number`` according to the following rules:</doc>
-<msg timestamp="20210421 01:08:32.767" level="INFO">${FAKERNUMBER} = 7</msg>
-<status status="PASS" starttime="20210421 01:08:32.766" endtime="20210421 01:08:32.767"/>
-</kw>
-<kw name="Free Email" library="FakerLibrary">
-<var>${FAKEREMAIL}</var>
-<msg timestamp="20210421 01:08:32.767" level="INFO">${FAKEREMAIL} = iirwin@gmail.com</msg>
-<status status="PASS" starttime="20210421 01:08:32.767" endtime="20210421 01:08:32.767"/>
-</kw>
-<kw name="Randomize Nb Elements" library="FakerLibrary">
-<var>${FAKEROPTION1OR2}</var>
-<arg>le=1</arg>
-<arg>min=0</arg>
-<arg>max=2</arg>
-<doc>Generate a random integer near ``number`` according to the following rules:</doc>
-<msg timestamp="20210421 01:08:32.768" level="INFO">${FAKEROPTION1OR2} = 2</msg>
-<status status="PASS" starttime="20210421 01:08:32.767" endtime="20210421 01:08:32.768"/>
-</kw>
-<kw name="Text" library="FakerLibrary">
-<var>${FAKERTEXT}</var>
-<arg>max_nb_chars=200</arg>
-<doc>Generate a text string.</doc>
-<msg timestamp="20210421 01:08:32.768" level="INFO">${FAKERTEXT} = Whole agent prepare three study. Detail heart cause study heavy up tonight. Bit yard may information respond. Why size understand.</msg>
-<status status="PASS" starttime="20210421 01:08:32.768" endtime="20210421 01:08:32.768"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>&amp;{FAKERDATA}</arg>
-<arg>name=${FAKERFIRSTNAME}</arg>
-<arg>lastName=${FAKERLASTNAME}</arg>
-<arg>address=${FAKERADDRESS}</arg>
-<arg>password=${FAKERPASSWORD}</arg>
-<arg>phone=${FAKERPHONE}</arg>
-<arg>zipCode=${FAKERZIPCODE}</arg>
-<arg>city=${FAKERCITY}</arg>
-<arg>randomNumber=${FAKERNUMBER}</arg>
-<arg>email=${FAKEREMAIL}</arg>
-<arg>randomOption=${FAKEROPTION1OR2}</arg>
-<arg>text=${FAKERTEXT}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20210421 01:08:32.770" level="INFO">&amp;{FAKERDATA} = { name=Heidi | lastName=Beasley | address=88686 Johnson Via Suite 359 | password=1s961YGd*4 | phone=844765550 | zipCode=91294 | city=Jonathantown | randomNumber=7 | email=iirwin@gmail.com | randomOpti...</msg>
-<status status="PASS" starttime="20210421 01:08:32.768" endtime="20210421 01:08:32.771"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:32.762" endtime="20210421 01:08:32.771"/>
-</kw>
+<kw name="Then I must see my account area" library="SignInPage">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${sendButton}</arg>
+<arg>${infoAccountLabel}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210421 01:08:32.771" endtime="20210421 01:08:32.790"/>
-</kw>
-<kw name="Select From List By Index" library="SeleniumLibrary">
-<arg>${subjectHeadingDropdown}</arg>
-<arg>${FAKERDATA}[randomOption]</arg>
-<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
-<msg timestamp="20210421 01:08:32.790" level="INFO">Selecting options from selection list 'id:id_contact' by index 2.</msg>
-<status status="PASS" starttime="20210421 01:08:32.790" endtime="20210421 01:08:32.851"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${emailContactText}</arg>
-<arg>${FAKERDATA}[email]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:32.852" level="INFO">Typing text 'iirwin@gmail.com' into text field 'css:input#email'.</msg>
-<status status="PASS" starttime="20210421 01:08:32.852" endtime="20210421 01:08:32.954"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${orderReferenceText}</arg>
-<arg>${FAKERDATA}[randomNumber]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:32.955" level="INFO">Typing text '7' into text field 'id:id_order'.</msg>
-<status status="PASS" starttime="20210421 01:08:32.954" endtime="20210421 01:08:33.041"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${messageTextArea}</arg>
-<arg>${FAKERDATA}[text]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:33.042" level="INFO">Typing text 'Whole agent prepare three study. Detail heart cause study heavy up tonight. Bit yard may information respond. Why size understand.' into text field 'id:message'.</msg>
-<status status="PASS" starttime="20210421 01:08:33.042" endtime="20210421 01:08:33.191"/>
-</kw>
-<kw name="Choose File" library="SeleniumLibrary">
-<arg>${fileUpload}</arg>
-<arg>C:\\RobotFramework\\projectRobotWeb\\Resources\\Pages//test.txt</arg>
-<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
-<msg timestamp="20210421 01:08:33.192" level="INFO">Sending C:\RobotFramework\projectRobotWeb\Resources\Pages\test.txt to browser.</msg>
-<status status="PASS" starttime="20210421 01:08:33.191" endtime="20210421 01:08:33.233"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:32.762" endtime="20210421 01:08:33.233"/>
-</kw>
-<kw name="Send Message" library="ContactUsPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${sendButton}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:33.234" level="INFO">Clicking button 'id:submitMessage'.</msg>
-<status status="PASS" starttime="20210421 01:08:33.234" endtime="20210421 01:08:34.478"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:33.233" endtime="20210421 01:08:34.478"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:32.762" endtime="20210421 01:08:34.478"/>
-</kw>
-<kw name="Then I must see a success alert with text: &quot;Your message has been successfully sent to our team.&quot;" library="HomePage" sourcename="Then I must see a success alert with text: &quot;${message}&quot;">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${successAlert}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210421 01:08:34.479" endtime="20210421 01:08:34.502"/>
+<status status="PASS" starttime="20210426 01:16:07.899" endtime="20210426 01:16:07.923"/>
 </kw>
 <kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${successAlert}</arg>
-<arg>${message}</arg>
+<arg>${infoAccountLabel}</arg>
+<arg>Welcome to your account</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210421 01:08:34.521" level="INFO">Element 'css:.alert-success' contains text 'Your message has been successfully sent to our team.'.</msg>
-<status status="PASS" starttime="20210421 01:08:34.502" endtime="20210421 01:08:34.521"/>
+<msg timestamp="20210426 01:16:07.937" level="INFO">Element 'class:info-account' contains text 'Welcome to your account'.</msg>
+<status status="PASS" starttime="20210426 01:16:07.923" endtime="20210426 01:16:07.938"/>
 </kw>
-<status status="PASS" starttime="20210421 01:08:34.478" endtime="20210421 01:08:34.521"/>
+<status status="PASS" starttime="20210426 01:16:07.899" endtime="20210426 01:16:07.938"/>
 </kw>
-<tag>smoke</tag>
-<status status="PASS" starttime="20210421 01:08:29.171" endtime="20210421 01:08:34.521"/>
-</test>
-<test id="s1-s1-t2" name="Scenario2: Wrong message - empty email">
-<kw name="Wrong Email Message" library="ContactUsPage">
-<arg>${EMPTY}</arg>
-<arg>Invalid email address.</arg>
-<kw name="Given that I access the &quot;Contact us&quot; and check the header &quot;CUSTOMER SERVICE - CONTACT US&quot;" library="HomePage" sourcename="Given that I access the &quot;${page}&quot; and check the header &quot;${header}&quot;">
+<status status="PASS" starttime="20210426 01:16:03.322" endtime="20210426 01:16:07.938"/>
+</kw>
+<kw name="Go To Dashboard Option" library="SignInPage">
+<arg>Order history and details</arg>
+<arg>ORDER HISTORY</arg>
+<kw name="When I access &quot;${option}&quot; option from my account" library="SignInPage" sourcename="When I access &quot;${myAccountOption}&quot; option from my account">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://ul[@class='myaccount-link-list']//span[contains(text(), '${myAccountOption}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210426 01:16:07.939" level="INFO">Clicking element 'xpath://ul[@class='myaccount-link-list']//span[contains(text(), 'Order history and details')]'.</msg>
+<status status="PASS" starttime="20210426 01:16:07.939" endtime="20210426 01:16:09.684"/>
+</kw>
+<status status="PASS" starttime="20210426 01:16:07.939" endtime="20210426 01:16:09.684"/>
+</kw>
+<kw name="Then I must see the page with the header &quot;${headerText}&quot;" library="HomePage" sourcename="Then I must see the page with the header &quot;${text}&quot;">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${pageHeader}</arg>
+<arg>${text}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20210426 01:16:09.705" level="INFO">Element 'xpath://h1[contains(@class,"page-subheading")] | //h1[contains(@class,"page-heading")]' contains text 'ORDER HISTORY'.</msg>
+<status status="PASS" starttime="20210426 01:16:09.685" endtime="20210426 01:16:09.706"/>
+</kw>
+<status status="PASS" starttime="20210426 01:16:09.685" endtime="20210426 01:16:09.706"/>
+</kw>
+<status status="PASS" starttime="20210426 01:16:07.938" endtime="20210426 01:16:09.706"/>
+</kw>
+<kw name="Sign out" library="SignInPage" type="TEARDOWN">
+<kw name="Given that I access the &quot;Sign out&quot; and check the header &quot;AUTHENTICATION&quot;" library="HomePage" sourcename="Given that I access the &quot;${page}&quot; and check the header &quot;${header}&quot;">
 <kw name="home navigation bar" library="HomePage">
 <arg>${page}</arg>
 <arg>${header}</arg>
@@ -243,527 +147,59 @@
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210421 01:08:34.527" endtime="20210421 01:08:34.543"/>
+<status status="PASS" starttime="20210426 01:16:09.708" endtime="20210426 01:16:09.730"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:34.543" level="INFO">Clicking element 'xpath://nav//*[contains(text(), "Contact us")]'.</msg>
-<status status="PASS" starttime="20210421 01:08:34.543" endtime="20210421 01:08:37.231"/>
+<msg timestamp="20210426 01:16:09.730" level="INFO">Clicking element 'xpath://nav//*[contains(text(), "Sign out")]'.</msg>
+<status status="PASS" starttime="20210426 01:16:09.730" endtime="20210426 01:16:12.473"/>
 </kw>
-<status status="PASS" starttime="20210421 01:08:34.526" endtime="20210421 01:08:37.231"/>
+<status status="PASS" starttime="20210426 01:16:09.708" endtime="20210426 01:16:12.474"/>
 </kw>
 <kw name="Then I must see the page with the header &quot;${textHeader}&quot;" library="HomePage" sourcename="Then I must see the page with the header &quot;${text}&quot;">
 <kw name="Element Should Contain" library="SeleniumLibrary">
 <arg>${pageHeader}</arg>
 <arg>${text}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210421 01:08:37.250" level="INFO">Element 'xpath://h1[contains(@class,"page-heading")]' contains text 'CUSTOMER SERVICE - CONTACT US'.</msg>
-<status status="PASS" starttime="20210421 01:08:37.232" endtime="20210421 01:08:37.250"/>
+<msg timestamp="20210426 01:16:12.494" level="INFO">Element 'xpath://h1[contains(@class,"page-subheading")] | //h1[contains(@class,"page-heading")]' contains text 'AUTHENTICATION'.</msg>
+<status status="PASS" starttime="20210426 01:16:12.474" endtime="20210426 01:16:12.494"/>
 </kw>
-<status status="PASS" starttime="20210421 01:08:37.231" endtime="20210421 01:08:37.250"/>
+<status status="PASS" starttime="20210426 01:16:12.474" endtime="20210426 01:16:12.494"/>
 </kw>
-<status status="PASS" starttime="20210421 01:08:34.525" endtime="20210421 01:08:37.250"/>
+<status status="PASS" starttime="20210426 01:16:09.707" endtime="20210426 01:16:12.494"/>
 </kw>
-<status status="PASS" starttime="20210421 01:08:34.525" endtime="20210421 01:08:37.250"/>
+<status status="PASS" starttime="20210426 01:16:09.707" endtime="20210426 01:16:12.494"/>
 </kw>
-<kw name="When I try to send a message with email &quot;${emailValue}&quot;" library="ContactUsPage" sourcename="When I try to send a message with email &quot;${emailValue}&quot;">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${emailContactText}</arg>
-<arg>${emailValue}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:37.251" level="INFO">Typing text '' into text field 'css:input#email'.</msg>
-<status status="PASS" starttime="20210421 01:08:37.251" endtime="20210421 01:08:37.306"/>
-</kw>
-<kw name="Send Message" library="ContactUsPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${sendButton}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:37.306" level="INFO">Clicking button 'id:submitMessage'.</msg>
-<status status="PASS" starttime="20210421 01:08:37.306" endtime="20210421 01:08:39.256"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:37.306" endtime="20210421 01:08:39.257"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:37.251" endtime="20210421 01:08:39.257"/>
-</kw>
-<kw name="Then I must see error message &quot;${message}&quot;" library="SignInPage" sourcename="Then I must see error message &quot;${message}&quot;">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${invalidEmailAlert}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210421 01:08:39.257" endtime="20210421 01:08:39.280"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${invalidEmailAlert}</arg>
-<arg>${message}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210421 01:08:39.296" level="INFO">Element 'css:.alert-danger' contains text 'Invalid email address.'.</msg>
-<status status="PASS" starttime="20210421 01:08:39.280" endtime="20210421 01:08:39.296"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:39.257" endtime="20210421 01:08:39.296"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:34.523" endtime="20210421 01:08:39.296"/>
+<status status="PASS" starttime="20210426 01:16:09.706" endtime="20210426 01:16:12.494"/>
 </kw>
 <tag>smoke</tag>
-<status status="PASS" starttime="20210421 01:08:34.523" endtime="20210421 01:08:39.297"/>
-</test>
-<test id="s1-s1-t3" name="Scenario3: Wrong message - invalid email 1">
-<kw name="Wrong Email Message" library="ContactUsPage">
-<arg>test@</arg>
-<arg>Invalid email address.</arg>
-<kw name="Given that I access the &quot;Contact us&quot; and check the header &quot;CUSTOMER SERVICE - CONTACT US&quot;" library="HomePage" sourcename="Given that I access the &quot;${page}&quot; and check the header &quot;${header}&quot;">
-<kw name="home navigation bar" library="HomePage">
-<arg>${page}</arg>
-<arg>${header}</arg>
-<kw name="When I access the navigation bar link &quot;${link}&quot;" library="HomePage" sourcename="When I access the navigation bar link &quot;${linkText}&quot;">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210421 01:08:39.300" endtime="20210421 01:08:39.314"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:39.315" level="INFO">Clicking element 'xpath://nav//*[contains(text(), "Contact us")]'.</msg>
-<status status="PASS" starttime="20210421 01:08:39.314" endtime="20210421 01:08:40.414"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:39.300" endtime="20210421 01:08:40.414"/>
-</kw>
-<kw name="Then I must see the page with the header &quot;${textHeader}&quot;" library="HomePage" sourcename="Then I must see the page with the header &quot;${text}&quot;">
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${pageHeader}</arg>
-<arg>${text}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210421 01:08:40.433" level="INFO">Element 'xpath://h1[contains(@class,"page-heading")]' contains text 'CUSTOMER SERVICE - CONTACT US'.</msg>
-<status status="PASS" starttime="20210421 01:08:40.414" endtime="20210421 01:08:40.433"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:40.414" endtime="20210421 01:08:40.433"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:39.299" endtime="20210421 01:08:40.433"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:39.299" endtime="20210421 01:08:40.433"/>
-</kw>
-<kw name="When I try to send a message with email &quot;${emailValue}&quot;" library="ContactUsPage" sourcename="When I try to send a message with email &quot;${emailValue}&quot;">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${emailContactText}</arg>
-<arg>${emailValue}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:40.434" level="INFO">Typing text 'test@' into text field 'css:input#email'.</msg>
-<status status="PASS" starttime="20210421 01:08:40.434" endtime="20210421 01:08:40.497"/>
-</kw>
-<kw name="Send Message" library="ContactUsPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${sendButton}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:40.498" level="INFO">Clicking button 'id:submitMessage'.</msg>
-<status status="PASS" starttime="20210421 01:08:40.498" endtime="20210421 01:08:42.838"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:40.497" endtime="20210421 01:08:42.838"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:40.433" endtime="20210421 01:08:42.838"/>
-</kw>
-<kw name="Then I must see error message &quot;${message}&quot;" library="SignInPage" sourcename="Then I must see error message &quot;${message}&quot;">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${invalidEmailAlert}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210421 01:08:42.839" endtime="20210421 01:08:42.856"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${invalidEmailAlert}</arg>
-<arg>${message}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210421 01:08:42.871" level="INFO">Element 'css:.alert-danger' contains text 'Invalid email address.'.</msg>
-<status status="PASS" starttime="20210421 01:08:42.856" endtime="20210421 01:08:42.871"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:42.838" endtime="20210421 01:08:42.871"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:39.299" endtime="20210421 01:08:42.871"/>
-</kw>
-<tag>smoke</tag>
-<status status="PASS" starttime="20210421 01:08:39.298" endtime="20210421 01:08:42.872"/>
-</test>
-<test id="s1-s1-t4" name="Scenario4: Wrong message - invalid email 2">
-<kw name="Wrong Email Message" library="ContactUsPage">
-<arg>test@ddd.</arg>
-<arg>Invalid email address.</arg>
-<kw name="Given that I access the &quot;Contact us&quot; and check the header &quot;CUSTOMER SERVICE - CONTACT US&quot;" library="HomePage" sourcename="Given that I access the &quot;${page}&quot; and check the header &quot;${header}&quot;">
-<kw name="home navigation bar" library="HomePage">
-<arg>${page}</arg>
-<arg>${header}</arg>
-<kw name="When I access the navigation bar link &quot;${link}&quot;" library="HomePage" sourcename="When I access the navigation bar link &quot;${linkText}&quot;">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210421 01:08:42.875" endtime="20210421 01:08:42.890"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:42.891" level="INFO">Clicking element 'xpath://nav//*[contains(text(), "Contact us")]'.</msg>
-<status status="PASS" starttime="20210421 01:08:42.890" endtime="20210421 01:08:43.941"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:42.875" endtime="20210421 01:08:43.941"/>
-</kw>
-<kw name="Then I must see the page with the header &quot;${textHeader}&quot;" library="HomePage" sourcename="Then I must see the page with the header &quot;${text}&quot;">
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${pageHeader}</arg>
-<arg>${text}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210421 01:08:43.967" level="INFO">Element 'xpath://h1[contains(@class,"page-heading")]' contains text 'CUSTOMER SERVICE - CONTACT US'.</msg>
-<status status="PASS" starttime="20210421 01:08:43.942" endtime="20210421 01:08:43.967"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:43.941" endtime="20210421 01:08:43.967"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:42.875" endtime="20210421 01:08:43.967"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:42.874" endtime="20210421 01:08:43.967"/>
-</kw>
-<kw name="When I try to send a message with email &quot;${emailValue}&quot;" library="ContactUsPage" sourcename="When I try to send a message with email &quot;${emailValue}&quot;">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${emailContactText}</arg>
-<arg>${emailValue}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:43.968" level="INFO">Typing text 'test@ddd.' into text field 'css:input#email'.</msg>
-<status status="PASS" starttime="20210421 01:08:43.968" endtime="20210421 01:08:44.040"/>
-</kw>
-<kw name="Send Message" library="ContactUsPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${sendButton}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:44.041" level="INFO">Clicking button 'id:submitMessage'.</msg>
-<status status="PASS" starttime="20210421 01:08:44.040" endtime="20210421 01:08:45.068"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:44.040" endtime="20210421 01:08:45.069"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:43.967" endtime="20210421 01:08:45.069"/>
-</kw>
-<kw name="Then I must see error message &quot;${message}&quot;" library="SignInPage" sourcename="Then I must see error message &quot;${message}&quot;">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${invalidEmailAlert}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210421 01:08:45.069" endtime="20210421 01:08:45.089"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${invalidEmailAlert}</arg>
-<arg>${message}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210421 01:08:45.105" level="INFO">Element 'css:.alert-danger' contains text 'Invalid email address.'.</msg>
-<status status="PASS" starttime="20210421 01:08:45.089" endtime="20210421 01:08:45.105"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:45.069" endtime="20210421 01:08:45.105"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:42.874" endtime="20210421 01:08:45.105"/>
-</kw>
-<tag>smoke</tag>
-<status status="PASS" starttime="20210421 01:08:42.873" endtime="20210421 01:08:45.106"/>
-</test>
-<test id="s1-s1-t5" name="Scenario4: Wrong message - invalid email 3">
-<kw name="Wrong Email Message" library="ContactUsPage">
-<arg>123456789</arg>
-<arg>Invalid email address.</arg>
-<kw name="Given that I access the &quot;Contact us&quot; and check the header &quot;CUSTOMER SERVICE - CONTACT US&quot;" library="HomePage" sourcename="Given that I access the &quot;${page}&quot; and check the header &quot;${header}&quot;">
-<kw name="home navigation bar" library="HomePage">
-<arg>${page}</arg>
-<arg>${header}</arg>
-<kw name="When I access the navigation bar link &quot;${link}&quot;" library="HomePage" sourcename="When I access the navigation bar link &quot;${linkText}&quot;">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210421 01:08:45.109" endtime="20210421 01:08:45.123"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:45.124" level="INFO">Clicking element 'xpath://nav//*[contains(text(), "Contact us")]'.</msg>
-<status status="PASS" starttime="20210421 01:08:45.123" endtime="20210421 01:08:46.229"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:45.109" endtime="20210421 01:08:46.230"/>
-</kw>
-<kw name="Then I must see the page with the header &quot;${textHeader}&quot;" library="HomePage" sourcename="Then I must see the page with the header &quot;${text}&quot;">
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${pageHeader}</arg>
-<arg>${text}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210421 01:08:46.253" level="INFO">Element 'xpath://h1[contains(@class,"page-heading")]' contains text 'CUSTOMER SERVICE - CONTACT US'.</msg>
-<status status="PASS" starttime="20210421 01:08:46.230" endtime="20210421 01:08:46.253"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:46.230" endtime="20210421 01:08:46.253"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:45.109" endtime="20210421 01:08:46.253"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:45.108" endtime="20210421 01:08:46.253"/>
-</kw>
-<kw name="When I try to send a message with email &quot;${emailValue}&quot;" library="ContactUsPage" sourcename="When I try to send a message with email &quot;${emailValue}&quot;">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${emailContactText}</arg>
-<arg>${emailValue}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:46.254" level="INFO">Typing text '123456789' into text field 'css:input#email'.</msg>
-<status status="PASS" starttime="20210421 01:08:46.254" endtime="20210421 01:08:46.331"/>
-</kw>
-<kw name="Send Message" library="ContactUsPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${sendButton}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:46.332" level="INFO">Clicking button 'id:submitMessage'.</msg>
-<status status="PASS" starttime="20210421 01:08:46.331" endtime="20210421 01:08:47.298"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:46.331" endtime="20210421 01:08:47.298"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:46.253" endtime="20210421 01:08:47.298"/>
-</kw>
-<kw name="Then I must see error message &quot;${message}&quot;" library="SignInPage" sourcename="Then I must see error message &quot;${message}&quot;">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${invalidEmailAlert}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210421 01:08:47.299" endtime="20210421 01:08:47.320"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${invalidEmailAlert}</arg>
-<arg>${message}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210421 01:08:47.336" level="INFO">Element 'css:.alert-danger' contains text 'Invalid email address.'.</msg>
-<status status="PASS" starttime="20210421 01:08:47.320" endtime="20210421 01:08:47.336"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:47.298" endtime="20210421 01:08:47.336"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:45.108" endtime="20210421 01:08:47.336"/>
-</kw>
-<tag>smoke</tag>
-<status status="PASS" starttime="20210421 01:08:45.107" endtime="20210421 01:08:47.337"/>
-</test>
-<test id="s1-s1-t6" name="Scenario6: Wrong message - empty message">
-<kw name="Given that I access the &quot;Contact us&quot; and check the header &quot;CUSTOMER SERVICE - CONTACT US&quot;" library="HomePage" sourcename="Given that I access the &quot;${page}&quot; and check the header &quot;${header}&quot;">
-<kw name="home navigation bar" library="HomePage">
-<arg>${page}</arg>
-<arg>${header}</arg>
-<kw name="When I access the navigation bar link &quot;${link}&quot;" library="HomePage" sourcename="When I access the navigation bar link &quot;${linkText}&quot;">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210421 01:08:47.340" endtime="20210421 01:08:47.353"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://nav//*[contains(text(), "${linkText}")]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:47.354" level="INFO">Clicking element 'xpath://nav//*[contains(text(), "Contact us")]'.</msg>
-<status status="PASS" starttime="20210421 01:08:47.354" endtime="20210421 01:08:48.294"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:47.339" endtime="20210421 01:08:48.294"/>
-</kw>
-<kw name="Then I must see the page with the header &quot;${textHeader}&quot;" library="HomePage" sourcename="Then I must see the page with the header &quot;${text}&quot;">
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${pageHeader}</arg>
-<arg>${text}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210421 01:08:48.311" level="INFO">Element 'xpath://h1[contains(@class,"page-heading")]' contains text 'CUSTOMER SERVICE - CONTACT US'.</msg>
-<status status="PASS" starttime="20210421 01:08:48.295" endtime="20210421 01:08:48.312"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:48.294" endtime="20210421 01:08:48.312"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:47.339" endtime="20210421 01:08:48.312"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:47.339" endtime="20210421 01:08:48.312"/>
-</kw>
-<kw name="When I try to send a message &quot;${EMPTY}&quot;" library="ContactUsPage" sourcename="When I try to send a message &quot;${messageText}&quot;">
-<kw name="Fill mandatory contact fields" library="ContactUsPage">
-<kw name="And I have random data" library="Base">
-<kw name="First Name" library="FakerLibrary">
-<var>${FAKERFIRSTNAME}</var>
-<msg timestamp="20210421 01:08:48.314" level="INFO">${FAKERFIRSTNAME} = Joshua</msg>
-<status status="PASS" starttime="20210421 01:08:48.314" endtime="20210421 01:08:48.314"/>
-</kw>
-<kw name="Last Name" library="FakerLibrary">
-<var>${FAKERLASTNAME}</var>
-<msg timestamp="20210421 01:08:48.314" level="INFO">${FAKERLASTNAME} = Grant</msg>
-<status status="PASS" starttime="20210421 01:08:48.314" endtime="20210421 01:08:48.314"/>
-</kw>
-<kw name="Street Address" library="FakerLibrary">
-<var>${FAKERADDRESS}</var>
-<doc>:example '791 Crist Parks'</doc>
-<msg timestamp="20210421 01:08:48.315" level="INFO">${FAKERADDRESS} = 576 Karen Valleys Suite 368</msg>
-<status status="PASS" starttime="20210421 01:08:48.315" endtime="20210421 01:08:48.315"/>
-</kw>
-<kw name="Password" library="FakerLibrary">
-<var>${FAKERPASSWORD}</var>
-<arg>length=10</arg>
-<doc>Generate a random password of the specified ``length``.</doc>
-<msg timestamp="20210421 01:08:48.315" level="INFO">${FAKERPASSWORD} = ft_sv1B9U$</msg>
-<status status="PASS" starttime="20210421 01:08:48.315" endtime="20210421 01:08:48.315"/>
-</kw>
-<kw name="Random Number" library="FakerLibrary">
-<var>${FAKERPHONE}</var>
-<arg>digits=9</arg>
-<doc>Generate a random integer according to the following rules:</doc>
-<msg timestamp="20210421 01:08:48.316" level="INFO">${FAKERPHONE} = 520664797</msg>
-<status status="PASS" starttime="20210421 01:08:48.315" endtime="20210421 01:08:48.316"/>
-</kw>
-<kw name="Postalcode" library="FakerLibrary">
-<var>${FAKERZIPCODE}</var>
-<msg timestamp="20210421 01:08:48.316" level="INFO">${FAKERZIPCODE} = 13346</msg>
-<status status="PASS" starttime="20210421 01:08:48.316" endtime="20210421 01:08:48.316"/>
-</kw>
-<kw name="City" library="FakerLibrary">
-<var>${FAKERCITY}</var>
-<doc>:example 'Sashabury'</doc>
-<msg timestamp="20210421 01:08:48.316" level="INFO">${FAKERCITY} = West Theresa</msg>
-<status status="PASS" starttime="20210421 01:08:48.316" endtime="20210421 01:08:48.316"/>
-</kw>
-<kw name="Randomize Nb Elements" library="FakerLibrary">
-<var>${FAKERNUMBER}</var>
-<arg>le=2</arg>
-<arg>min=1</arg>
-<arg>max=50</arg>
-<doc>Generate a random integer near ``number`` according to the following rules:</doc>
-<msg timestamp="20210421 01:08:48.316" level="INFO">${FAKERNUMBER} = 8</msg>
-<status status="PASS" starttime="20210421 01:08:48.316" endtime="20210421 01:08:48.316"/>
-</kw>
-<kw name="Free Email" library="FakerLibrary">
-<var>${FAKEREMAIL}</var>
-<msg timestamp="20210421 01:08:48.317" level="INFO">${FAKEREMAIL} = kimberly35@yahoo.com</msg>
-<status status="PASS" starttime="20210421 01:08:48.317" endtime="20210421 01:08:48.317"/>
-</kw>
-<kw name="Randomize Nb Elements" library="FakerLibrary">
-<var>${FAKEROPTION1OR2}</var>
-<arg>le=1</arg>
-<arg>min=0</arg>
-<arg>max=2</arg>
-<doc>Generate a random integer near ``number`` according to the following rules:</doc>
-<msg timestamp="20210421 01:08:48.317" level="INFO">${FAKEROPTION1OR2} = 2</msg>
-<status status="PASS" starttime="20210421 01:08:48.317" endtime="20210421 01:08:48.317"/>
-</kw>
-<kw name="Text" library="FakerLibrary">
-<var>${FAKERTEXT}</var>
-<arg>max_nb_chars=200</arg>
-<doc>Generate a text string.</doc>
-<msg timestamp="20210421 01:08:48.318" level="INFO">${FAKERTEXT} = About evidence big citizen reveal manage tough face.
-Parent race another party they. Country because adult pick hear few.
-Run event during guy. Shake certainly remain attack.</msg>
-<status status="PASS" starttime="20210421 01:08:48.317" endtime="20210421 01:08:48.318"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>&amp;{FAKERDATA}</arg>
-<arg>name=${FAKERFIRSTNAME}</arg>
-<arg>lastName=${FAKERLASTNAME}</arg>
-<arg>address=${FAKERADDRESS}</arg>
-<arg>password=${FAKERPASSWORD}</arg>
-<arg>phone=${FAKERPHONE}</arg>
-<arg>zipCode=${FAKERZIPCODE}</arg>
-<arg>city=${FAKERCITY}</arg>
-<arg>randomNumber=${FAKERNUMBER}</arg>
-<arg>email=${FAKEREMAIL}</arg>
-<arg>randomOption=${FAKEROPTION1OR2}</arg>
-<arg>text=${FAKERTEXT}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20210421 01:08:48.319" level="INFO">&amp;{FAKERDATA} = { name=Joshua | lastName=Grant | address=576 Karen Valleys Suite 368 | password=ft_sv1B9U$ | phone=520664797 | zipCode=13346 | city=West Theresa | randomNumber=8 | email=kimberly35@yahoo.com | randomO...</msg>
-<status status="PASS" starttime="20210421 01:08:48.318" endtime="20210421 01:08:48.319"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:48.314" endtime="20210421 01:08:48.319"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${sendButton}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210421 01:08:48.319" endtime="20210421 01:08:48.333"/>
-</kw>
-<kw name="Select From List By Index" library="SeleniumLibrary">
-<arg>${subjectHeadingDropdown}</arg>
-<arg>${FAKERDATA}[randomOption]</arg>
-<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
-<msg timestamp="20210421 01:08:48.333" level="INFO">Selecting options from selection list 'id:id_contact' by index 2.</msg>
-<status status="PASS" starttime="20210421 01:08:48.333" endtime="20210421 01:08:48.394"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${emailContactText}</arg>
-<arg>${FAKERDATA}[email]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:48.395" level="INFO">Typing text 'kimberly35@yahoo.com' into text field 'css:input#email'.</msg>
-<status status="PASS" starttime="20210421 01:08:48.394" endtime="20210421 01:08:48.466"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${orderReferenceText}</arg>
-<arg>${FAKERDATA}[randomNumber]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:48.466" level="INFO">Typing text '8' into text field 'id:id_order'.</msg>
-<status status="PASS" starttime="20210421 01:08:48.466" endtime="20210421 01:08:48.530"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${messageTextArea}</arg>
-<arg>${FAKERDATA}[text]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:48.531" level="INFO">Typing text 'About evidence big citizen reveal manage tough face.
-Parent race another party they. Country because adult pick hear few.
-Run event during guy. Shake certainly remain attack.' into text field 'id:message'.</msg>
-<status status="PASS" starttime="20210421 01:08:48.531" endtime="20210421 01:08:48.671"/>
-</kw>
-<kw name="Choose File" library="SeleniumLibrary">
-<arg>${fileUpload}</arg>
-<arg>C:\\RobotFramework\\projectRobotWeb\\Resources\\Pages//test.txt</arg>
-<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
-<msg timestamp="20210421 01:08:48.672" level="INFO">Sending C:\RobotFramework\projectRobotWeb\Resources\Pages\test.txt to browser.</msg>
-<status status="PASS" starttime="20210421 01:08:48.672" endtime="20210421 01:08:48.701"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:48.313" endtime="20210421 01:08:48.702"/>
-</kw>
-<kw name="Clear Element Text" library="SeleniumLibrary">
-<arg>${messageTextArea}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" starttime="20210421 01:08:48.702" endtime="20210421 01:08:48.720"/>
-</kw>
-<kw name="Send Message" library="ContactUsPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${sendButton}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210421 01:08:48.721" level="INFO">Clicking button 'id:submitMessage'.</msg>
-<status status="PASS" starttime="20210421 01:08:48.721" endtime="20210421 01:08:49.831"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:48.721" endtime="20210421 01:08:49.832"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:48.312" endtime="20210421 01:08:49.832"/>
-</kw>
-<kw name="Then I must see error message &quot;The message cannot be blank.&quot;" library="SignInPage" sourcename="Then I must see error message &quot;${message}&quot;">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${invalidEmailAlert}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210421 01:08:49.833" endtime="20210421 01:08:49.855"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>${invalidEmailAlert}</arg>
-<arg>${message}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210421 01:08:49.871" level="INFO">Element 'css:.alert-danger' contains text 'The message cannot be blank.'.</msg>
-<status status="PASS" starttime="20210421 01:08:49.855" endtime="20210421 01:08:49.871"/>
-</kw>
-<status status="PASS" starttime="20210421 01:08:49.833" endtime="20210421 01:08:49.871"/>
-</kw>
-<tag>smoke</tag>
-<status status="PASS" starttime="20210421 01:08:47.338" endtime="20210421 01:08:49.871"/>
+<status status="PASS" starttime="20210426 01:16:03.321" endtime="20210426 01:16:12.495"/>
 </test>
 <kw name="Finish Session" library="Hooks" type="TEARDOWN">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210421 01:08:50.160" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-164.png"&gt;&lt;img src="selenium-screenshot-164.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210421 01:08:49.873" endtime="20210421 01:08:50.160"/>
+<msg timestamp="20210426 01:16:12.616" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-186.png"&gt;&lt;img src="selenium-screenshot-186.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210426 01:16:12.496" endtime="20210426 01:16:12.616"/>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210421 01:08:50.160" endtime="20210421 01:08:52.278"/>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210426 01:16:12.616" endtime="20210426 01:16:14.731"/>
 </kw>
-<status status="PASS" starttime="20210421 01:08:49.873" endtime="20210421 01:08:52.278"/>
+<status status="PASS" starttime="20210426 01:16:12.496" endtime="20210426 01:16:14.731"/>
 </kw>
-<doc>Check Contact Us functionality</doc>
-<status status="PASS" starttime="20210421 01:08:19.866" endtime="20210421 01:08:52.278"/>
-</suite>
-<status status="PASS" starttime="20210421 01:08:19.847" endtime="20210421 01:08:52.281"/>
+<doc>Check Sign In functionality</doc>
+<status status="PASS" starttime="20210426 01:15:53.068" endtime="20210426 01:16:14.731"/>
 </suite>
 <statistics>
 <total>
-<stat pass="6" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="6" fail="0" skip="0">smoke</stat>
+<stat pass="1" fail="0" skip="0">smoke</stat>
 </tag>
 <suite>
-<stat pass="6" fail="0" skip="0" id="s1" name="ContactUs">ContactUs</stat>
-<stat pass="6" fail="0" skip="0" id="s1-s1" name="contactUsTest">ContactUs.contactUsTest</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Dashboard">Dashboard</stat>
 </suite>
 </statistics>
 <errors>

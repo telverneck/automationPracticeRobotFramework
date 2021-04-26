@@ -44,8 +44,13 @@ Then I must see my account area
     Element Should Contain          ${infoAccountLabel}     Welcome to your account
 
 And I logout
-    Wait Until Element Is Visible   ${infoAccountLabel}
-    Click Element                   ${signOutButton}  
+    Sign out 
+
+When I access "${myAccountOption}" option from my account 
+    Click Element               xpath://ul[@class='myaccount-link-list']//span[contains(text(), '${myAccountOption}')]
+
+
+
 
 
 Then I must see error message "${message}"
@@ -90,3 +95,11 @@ Access login
     [Arguments]     ${email}       ${passssword}
     Given that I access the "Sign in" and check the header "AUTHENTICATION"
     When I submit use "${email}" and password "${passssword}"
+
+Sign out
+    Given that I access the "Sign out" and check the header "AUTHENTICATION"
+
+Go To Dashboard Option
+    [Arguments]     ${option}       ${headerText}
+    When I access "${option}" option from my account
+    Then I must see the page with the header "${headerText}"

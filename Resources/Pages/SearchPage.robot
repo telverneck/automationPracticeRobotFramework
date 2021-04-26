@@ -37,11 +37,6 @@ When I add this item to the cart
     Click Element                       ${addToCartButton}
     
 
-And I proceed to checkout    
-    Wait Until Element Is Visible       ${cartModal}
-    Click Element                       ${checkoutModalButton}
-
-
 
 Then I must see the results 
     # Title Should Be                     Search - My Store 
